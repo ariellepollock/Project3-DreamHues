@@ -19,7 +19,6 @@ As a user, I want the ability to...
   - generate a color palette via an image in a dream log
   - generate a new color palette (will replace the existing)
   - view dream logs
-  - view dreams photo album
 
 ## Wireframes
 Wireframe screenshots will go here.
