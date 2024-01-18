@@ -31,6 +31,7 @@ Link to FigJam board: https://www.figma.com/file/QDuC8f5Nm5q0SZDwTsGXa3/Wirefram
 - Python
 - JavaScript
 - CSS3
+- Colormind API: http://colormind.io/api-access/
 
 ## Ice Box
 As a user, I want the ability to...
