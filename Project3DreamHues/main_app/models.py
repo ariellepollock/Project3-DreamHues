@@ -7,13 +7,13 @@ FEELING = (
   ('G', 'Good'),
   ('O', 'Okay'),
   ('N', 'Not Good'),
-  ('B', 'Bad')
+  ('B', 'Bad'),
 )
 
 TYPE = (
-  ('N', 'Nightmare')
-  ('A', 'Amazing')
-  ('W', 'Weird')
+  ('N', 'Nightmare'),
+  ('A', 'Amazing'),
+  ('W', 'Weird'),
 )
 
 
