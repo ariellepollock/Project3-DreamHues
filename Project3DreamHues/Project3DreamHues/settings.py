@@ -80,9 +80,9 @@ DATABASES = {
         'NAME': 'dreamhuesdb',
         'USER': 'voyager6346',
         'PASSWORD': 'gh6eA3PmvSEW',
-        'HOST': '[hostname]',
-        'PORT': '[port]',
-        
+        'HOST': 'ep-small-poetry-a6jcy30j.us-west-2.aws.neon.tech',
+        'PORT': '5432',
+        'OPTIONS': {'sslmode': 'require'},
 }
 }
 
