@@ -22,8 +22,8 @@ As a user, I want the ability to...
   - view dream logs
 
 ## Wireframes
+Link to Wireframe: https://www.figma.com/file/QDuC8f5Nm5q0SZDwTsGXa3/Wireframe-DreamHues?type=whiteboard&t=pS6oPPImxvtNSEjC-1
 
-Link to FigJam board: https://www.figma.com/file/QDuC8f5Nm5q0SZDwTsGXa3/Wireframe-DreamHues?type=whiteboard&t=pS6oPPImxvtNSEjC-1
 ![image](https://github.com/Jlarranaga/Project3-DreamHues/assets/149622991/ad69c3b9-7d89-403b-9ac4-f0e9283ea480)
 
 
