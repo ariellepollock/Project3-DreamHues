@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,11 +81,11 @@ WSGI_APPLICATION = 'Project3DreamHues.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dreamhuesdb',
-        'USER': 'voyager6346',
-        'PASSWORD': 'gh6eA3PmvSEW',
-        'HOST': 'ep-small-poetry-a6jcy30j.us-west-2.aws.neon.tech',
-        'PORT': '5432',
+        'NAME': env('NAME'),
+        'USER': env('USER'),
+        'PASSWORD': env('PASSWORD'),
+        'HOST': env('HOST'),
+        'PORT': env('PORT'),
         'OPTIONS': {'sslmode': 'require'},
 }
 }
