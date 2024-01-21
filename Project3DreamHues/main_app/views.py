@@ -10,6 +10,12 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
+# Get - dreams_index
+def dreams_index(request):
+    return render(request, 'dreams/index.html', {
+        'dreams': dreams
+    })
+
 # USER STUFF
 # sign up page
 def signup(request):

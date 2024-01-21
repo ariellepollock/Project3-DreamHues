@@ -17,7 +17,7 @@ TYPE = (
 )
 
 
-class Dreams(models.Model):
+class Dream(models.Model):
   date = models.DateField('Date of Dream')
   name = models.CharField(max_length=100)
   about = models.TextField(max_length=500)
