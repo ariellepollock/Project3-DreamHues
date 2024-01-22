@@ -12,9 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 # import environ
 from pathlib import Path
-from dotenv import load_dotenv
+import environ
+import os
 
-load_dotenv()
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,16 +81,18 @@ WSGI_APPLICATION = 'Project3DreamHues.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dreamhuesdb',
-        'USER': 'voyager6346',
-        'PASSWORD': 'gh6eA3PmvSEW',
-        'HOST': 'ep-small-poetry-a6jcy30j.us-west-2.aws.neon.tech',
-        'PORT': '5432',
+        'NAME': env('NEON_NAME'),
+        'USER': env('NEON_USER'),
+        'PASSWORD': env('NEON_PASSWORD'),
+        'HOST': env('NEON_HOST'),
+        'PORT': env('NEON_PORT'),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

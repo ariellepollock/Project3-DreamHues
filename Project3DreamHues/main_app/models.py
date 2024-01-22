@@ -14,11 +14,11 @@ FEELING = (
 TYPE = (
   ('N', 'Nightmare'),
   ('A', 'Amazing'),
-  ('W', 'Weird'),
+  ('W', 'Weird')
 )
 
 
-class Dreams(models.Model):
+class Dream(models.Model):
   date = models.DateField('Date of Dream')
   name = models.CharField(max_length=100)
   about = models.TextField(max_length=500)
@@ -33,3 +33,6 @@ class Dreams(models.Model):
     default=TYPE[0][1]
   )
   user = models.ForeignKey(User,on_delete=models.CASCADE)
+
+  def __str__(self):
+        return self.name
