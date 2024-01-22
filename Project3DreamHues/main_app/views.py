@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
-from . models import Dream
+
+from . models import Dream, DreamForm
 # Create your views here.
 
 # Get - Home
@@ -15,8 +16,7 @@ def about(request):
 
 # Get - dreams_index
 def dreams_index(request):
-    dreams = Dream.objects.all()
-
+    dreams = Dream.objects.filter()
     for dream in dreams:
       print(dream)
     return render(request, 'dreams/index.html', {
@@ -36,7 +36,7 @@ def signup(request):
       user = form.save()
       # This is how we log a user in via code
       login(request, user)
-      return redirect('index')
+      return redirect('/')
     else:
       error_message = 'Invalid sign up - try again'
   # A bad POST or a GET request, so render signup.html with an empty form
@@ -46,4 +46,4 @@ def signup(request):
 
 # log in page
 def login(request):
-  return render(request, 'user/login.html')
+  return render(request, 'registration/login.html')
