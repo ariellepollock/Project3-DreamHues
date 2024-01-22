@@ -1,6 +1,10 @@
-from django.shortcuts import render, requests
+from django.shortcuts import render
 
 from . models import Dream
+
+import requests
+
+import json
 
 # Create your views here.
 
