@@ -1,4 +1,8 @@
 from django.db import models
+from django import forms
+from django.contrib.auth.models import User
+
+
 
 from datetime import date
 # Create your models here.
@@ -44,7 +48,16 @@ class Dream(models.Model):
   dream_palette = Palette
 
   def __str__(self):
-    return self.name
+
+        return self.name
+
+class DreamForm(forms.ModelForm):
+  class Meta:
+    model = Dream
+    fields = ['date', 'name', 'about', 'feeling', 'dream_type']
+
+   
   
+
 
 
