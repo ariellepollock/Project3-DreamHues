@@ -87,7 +87,7 @@ DATABASES = {
         'HOST': env('HOST'),
         'PORT': env('PORT'),
         'OPTIONS': {'sslmode': 'require'},
-}
+    }
 }
 
 
