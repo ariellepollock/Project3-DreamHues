@@ -13,7 +13,7 @@ FEELING = (
 TYPE = (
   ('N', 'Nightmare'),
   ('A', 'Amazing'),
-  ('W', 'Weird'),
+  ('W', 'Weird')
 )
 
 
