@@ -1,0 +1,11 @@
+body {
+    background-color: #343a40;
+    color: #9a7d7b;
+    background-image: url(../../public/imgs/BackImg.png);
+}
+body::after {
+    content: "";
+    background: url(../../public/imgs/BackImg.png);
+    opacity: 0.5;
+    position: absolute;   
+}
