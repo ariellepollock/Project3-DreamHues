@@ -1,6 +1,11 @@
 from django.shortcuts import render
 
 from . models import Dream
+
+import requests
+
+import json
+
 # Create your views here.
 
 # Get - Home
@@ -20,6 +25,16 @@ def dreams_index(request):
     return render(request, 'dreams/index.html', {
         'dreams': dreams
     })
+
+# Get - random palette
+def get_random_palette():
+    url = 'http://colormind.io/api/'
+    payload = {"model": "default"}
+    response = requests.post(url, data=json.dumps(payload))
+    if response.status_code == 200:
+        return response.json()['result']
+    else:
+        return None
 
 # USER STUFF
 # sign up page
