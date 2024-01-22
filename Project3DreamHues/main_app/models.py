@@ -31,3 +31,6 @@ class Dream(models.Model):
     choices=TYPE,
     default=TYPE[0][1]
   )
+
+  def __str__(self):
+        return self.name
