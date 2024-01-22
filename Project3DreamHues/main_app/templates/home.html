@@ -3,10 +3,21 @@
 
 {% block content %}
 
-  <video playsinline preload="auto" autoplay muted loop src="/Project3DreamHues/main_app/videos/HomeVideo.mp4" type="video/mp4" id="homeBackground">
-  </video>
+<!-- <video playsinline preload="auto" autoplay muted loop src="../static/public/videos/HomeVideo.mp4" type="video/mp4" id="homeBackground">
+</video> -->
 
-  <h1>Home!</h1>
-  <img src="{% static 'Project3DreamHues/main_app/static/public/imgs/bedonacloud.png' %}" alt="bed in the clouds" style="width:100px; height:auto;">
+
+<div class="jumbotron">
+  <h1 class="display-4">Hello, Dreamers!</h1>
+  <p class="lead">Welcome to Dreamhues</p>
+  <hr class="my-4">
+  <p>Let's get Started</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
+    <a class="btn btn-primary btn-lg" href="/signup" role="button">New User</a>
+  </p>
+</div>
+
+
 
 {% endblock %}
