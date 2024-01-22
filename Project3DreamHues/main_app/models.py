@@ -16,6 +16,16 @@ TYPE = (
   ('W', 'Weird')
 )
 
+class Palette(models.Model):
+  # Assuming colors are in HEX format
+  color1 = models.CharField(max_length=7)  
+  color2 = models.CharField(max_length=7)
+  color3 = models.CharField(max_length=7)
+  color4 = models.CharField(max_length=7)
+  color5 = models.CharField(max_length=7)
+
+  def __str__(self):
+    return f'{self.color1}, {self.color2}, {self.color3}, {self.color4}, {self.color5}'
 
 class Dream(models.Model):
   date = models.DateField('Date of Dream')
@@ -31,6 +41,10 @@ class Dream(models.Model):
     choices=TYPE,
     default=TYPE[0][1]
   )
+  dream_palette = Palette
 
   def __str__(self):
-        return self.name
+    return self.name
+  
+
+
