@@ -9,3 +9,9 @@ body::after {
     opacity: 0.5;
     position: absolute;   
 }
+
+.bedcloud {
+    border: none;
+    border-color: #1a2839;
+    max-width: 50vmin;
+}
