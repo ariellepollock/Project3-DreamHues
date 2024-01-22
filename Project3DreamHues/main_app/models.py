@@ -7,7 +7,7 @@ FEELING = (
   ('G', 'Good'),
   ('O', 'Okay'),
   ('N', 'Not Good'),
-  ('B', 'Bad')
+  ('B', 'Bad'),
 )
 
 TYPE = (
