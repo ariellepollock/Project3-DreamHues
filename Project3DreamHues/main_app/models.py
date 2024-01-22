@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 from datetime import date
 # Create your models here.
@@ -31,3 +32,4 @@ class Dreams(models.Model):
     choices=TYPE,
     default=TYPE[0][1]
   )
+  user = models.ForeignKey(User,on_delete=models.CASCADE)
