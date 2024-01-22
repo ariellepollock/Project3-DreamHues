@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import environ
+import os
 
 env = environ.Env()
 environ.Env.read_env()
@@ -78,15 +79,15 @@ WSGI_APPLICATION = 'Project3DreamHues.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('NAME'),
-        'USER': env('USER'),
-        'PASSWORD': env('PASSWORD'),
-        'HOST': env('HOST'),
-        'PORT': env('PORT'),
-        'OPTIONS': {'sslmode': 'require'},
+        'NAME': env('NEON_NAME'),
+        'USER': env('NEON_USER'),
+        'PASSWORD': env('NEON_PASSWORD'),
+        'HOST': env('NEON_HOST'),
+        'PORT': env('NEON_PORT'),
     }
 }
 
