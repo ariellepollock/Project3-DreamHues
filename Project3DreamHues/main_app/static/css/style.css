@@ -1,7 +1,7 @@
 body {
-    background-color: #343a40;
-    color: #cecece;
-    background-image: url(../public/imgs/BackImg.png);
+    background-color: #1a2839;
+    color: #9a7d7b;
+    background-image: url(../../public/imgs/BackImg.png);
 }
 body::after {
     content: "";
