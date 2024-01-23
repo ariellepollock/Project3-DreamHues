@@ -28,20 +28,24 @@
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav navbar-nav-hover mx-auto">
               <li class="nav-item px-3">
+                <a href="{% url 'about' %}"class="nav-link text-white opacity-8">About</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item px-3">
                 <a class="nav-link text-white opacity-8" href="{% url 'index' %}">Dreams</a>
               </li>
               <li class="nav-item px-3">
+                <a href="{% url 'logout' %}"class="nav-link text-white opacity-8">Log Out</a>
                 <a class="nav-link text-white opacity-8" href="{% url 'dreams_create' %}">Add a Dream</a>
               </li>
-              <li class="nav-item px-3">
-                <a href="{% url 'about' %}"class="nav-link text-white opacity-8">About</a>
-              </li>
+              {% endif %}
             </ul>
           </div>
         </div>
       </nav>
     </header>
     <main class="container">
+
 
       {% block content %}
         <!-- DO NOT WRITE IN HERE -->
