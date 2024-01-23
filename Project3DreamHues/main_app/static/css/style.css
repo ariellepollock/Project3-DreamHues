@@ -1,6 +1,6 @@
 body {
     background-color: #1a2839;
-    color: #9a7d7b;
+    color: white;
     background-image: url(../../public/imgs/BackImg.png);
 }
 
@@ -15,6 +15,7 @@ body::after {
     border: none;
     max-width: 50vmin;
 }
+
 #homeBackground {
     object-fit: cover;
     width: 100vw;
