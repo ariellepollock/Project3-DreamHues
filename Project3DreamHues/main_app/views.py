@@ -18,7 +18,7 @@ def about(request):
 
 # Get - dreams_index
 def dreams_index(request):
-    dreams = Dream.objects.filter()
+    dreams = Dream.objects.all()
     # for dream in dreams: #TODO <--- shouldn't this be in the html to render all dreams there?
       # print(dream)
     return render(request, 'dreams/index.html', {'dreams': dreams} )
