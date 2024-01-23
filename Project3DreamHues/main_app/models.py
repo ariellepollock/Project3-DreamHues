@@ -45,6 +45,7 @@ class Dream(models.Model):
     choices=TYPE,
     default=TYPE[0][1]
   )
+  image = models.ImageField(upload_to='dream_image/', blank=True, null=True)
   dream_palette = Palette
 
   def __str__(self):
