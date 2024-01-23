@@ -15,13 +15,7 @@
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-dark z-index-3 py-3">
         <div class="container">
-
-          <a class="navbar-brand text-white" href="{% url 'home' %}" rel="tooltip" data-placement="bottom">
-
-
-
-            Dreamhues
-          </a>
+          <a class="navbar-brand text-white" href="{% url 'home' %}" rel="tooltip" data-placement="bottom">Dreamhues</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -35,8 +29,10 @@
                 <a class="nav-link text-white opacity-8" href="{% url 'index' %}">Dreams</a>
               </li>
               <li class="nav-item px-3">
-                <a href="{% url 'logout' %}"class="nav-link text-white opacity-8">Log Out</a>
                 <a class="nav-link text-white opacity-8" href="{% url 'dreams_create' %}">Add a Dream</a>
+              </li>
+              <li>
+                <a href="{% url 'logout' %}"class="nav-link text-white opacity-8">Log Out</a>
               </li>
               {% endif %}
             </ul>
