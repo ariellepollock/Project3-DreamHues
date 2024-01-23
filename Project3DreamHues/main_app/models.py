@@ -55,8 +55,7 @@ class DreamForm(forms.ModelForm):
   class Meta:
     model = Dream
     fields = ['date', 'name', 'about', 'feeling', 'dream_type']
-
-   
+  
   
 
 

@@ -2,6 +2,7 @@ from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
   path('', views.home, name='home'),
@@ -11,6 +12,8 @@ urlpatterns = [
   # USER THINGS
   # log in page
   path('login/', views.login, name='login'),
+  # log out
+  path('logout/', LogoutView.as_view(), name='logout'),
   # accounts
   path('accounts/', include('django.contrib.auth.urls')),
   # signup page
