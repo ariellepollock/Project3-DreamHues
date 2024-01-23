@@ -8,6 +8,7 @@ type="video/mp4" id="homeBackground">
 
 <h1 class="pageTitle">Dreams</h1>
 
+
 {% for d in dreams %}
 {% if dreams %}
 <div class="card-deck indexCard">
@@ -39,6 +40,7 @@ type="video/mp4" id="homeBackground">
   <a href="{% url 'dreams_create' %}" class="indexCreate">Create a dream</a>
 {% endif %}  
 {% endfor %}
+
 
 
 {% endblock %}
