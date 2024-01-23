@@ -1,6 +1,6 @@
 body {
     background-color: #1a2839;
-    color: #9a7d7b;
+    color: white;
     background-image: url(../../public/imgs/BackImg.png);
 }
 
@@ -9,6 +9,11 @@ body::after {
     background: url(../public/imgs/BackImg.png);
     opacity: 0.5;
     position: absolute;   
+}
+
+.bedcloud {
+    border: none;
+    max-width: 50vmin;
 }
 
 #homeBackground {
@@ -21,4 +26,4 @@ body::after {
     bottom: 0;
     right: 0;
     z-index: -1; 
-  }
+}
