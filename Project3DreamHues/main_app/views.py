@@ -1,17 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-
-
-
 from . models import Dream, DreamForm
 
-
-
 import requests
-
 import json
-
 
 # Create your views here.
 
@@ -26,11 +19,14 @@ def about(request):
 # Get - dreams_index
 def dreams_index(request):
     dreams = Dream.objects.filter()
-    for dream in dreams:
+    for dream in dreams: #TODO <--- shouldn't this be in the html to render all dreams there?
       print(dream)
-    return render(request, 'dreams/index.html', {
-        'dreams': dreams
-    })
+    return render(request,  {'dreams': dreams}, 'dreams/index.html' )
+
+#GET - Detail
+def dreams_detail(request):
+   #TODO Add detail code if needed & code the detail HTML file
+   return render(request, 'dreams/detail.html')
 
 # Get - random palette
 def get_random_palette():
