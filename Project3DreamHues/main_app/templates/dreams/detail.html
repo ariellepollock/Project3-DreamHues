@@ -10,23 +10,23 @@ type="video/mp4" id="homeBackground">
 
 <div class="container">
   <h1>Welcome to Your Dream</h1>
-  <h2>The Night of<h2 class="text-muted"> {% dream.date %} </h2></h2>
+  <h2>The Night of<h2 class="text-muted"> {{ dream.date }} </h2></h2>
   <img src="INSERT DB IMAGE PATH HERE PLEASE" class="img-fluid" alt="DreamImage">
-  <h3>This was a {% dream.feeling %} {% dream.dream_type %} kind of night.</h3>
+  <h3>This was a {{ dream.feeling }} {{ dream.dream_type }} kind of night.</h3>
 </div>
 <div class="about lead">
-  <p> {% dream.about %} </p>
+  <p> {{ dream.about }} </p>
 </div>
 
 <div class="d-flex">
   <table class="table">
     <thead>
       <tr>
-        <th scope="col"> {% dream.dream_palette.color1 %} </th>
-        <th scope="col"> {% dream.dream_palette.color2 %} </th>
-        <th scope="col"> {% dream.dream_palette.color3 %} </th>
-        <th scope="col"> {% dream.dream_palette.color4 %} </th>
-        <th scope="col"> {% dream.dream_palette.color5 %} </th>
+        <th scope="col"> {{ dream.dream_palette.color1 }} </th>
+        <th scope="col"> {{ dream.dream_palette.color2 }} </th>
+        <th scope="col"> {{ dream.dream_palette.color3 }} </th>
+        <th scope="col"> {{ dream.dream_palette.color4 }} </th>
+        <th scope="col"> {{ dream.dream_palette.color5 }} </th>
       </tr>
     </thead>
   </table>

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Amita';
+    src: url('/static/public/fonts/Amita-Regular.ttf');
+}
+
 body {
     background-color: #1a2839;
     color: white;
@@ -26,4 +31,24 @@ body::after {
     bottom: 0;
     right: 0;
     z-index: -1; 
+}
+
+.amitaFont {
+font-family: 'Amita';
+font-weight: bold;
+text-shadow: 0 0 5px #1b03f5, 0 0 5px #000000;
+color: rgb(255, 255, 255);
+}
+
+.indexCard{
+    margin: 4vmin;
+    text-align: center;
+    /* width: 30vw; */
+    align-self: center;
+    background: none;
+    border: none;
+}
+
+.pageTitle{
+    text-align: center;
 }
