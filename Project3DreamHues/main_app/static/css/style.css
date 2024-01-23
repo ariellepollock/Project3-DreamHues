@@ -12,6 +12,5 @@ body::after {
 
 .bedcloud {
     border: none;
-    border-color: #1a2839;
     max-width: 50vmin;
 }
