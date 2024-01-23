@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 
-  <video playsinline preload="auto" autoplay muted loop src="/Project3DreamHues/main_app/videos/HomeVideo.mp4" type="video/mp4" id="homeBackground">
+  <video playsinline preload="auto" autoplay muted loop 
+  src="{% static 'public/videos/HomePage.mp4' %}"
+  type="video/mp4" id="homeBackground">
   </video>
 
+ 
   <h1>Home!</h1>
 
 {% endblock %}
