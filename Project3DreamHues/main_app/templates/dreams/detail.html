@@ -10,7 +10,7 @@ type="video/mp4" id="homeBackground">
 
 <div class="container">
   <h1>Welcome to Your Dream</h1>
-  <h2>The Night of<h2 class="text-muted"> {{ dream.date }} </h2></h2>
+  <h2>The Night of<h2 class="text"> {{ dream.date }} </h2></h2>
 
   {% if dream.image %}
     <img src="{{ dream.image }}" class="img-fluid" alt="Dream Image">
@@ -40,6 +40,7 @@ type="video/mp4" id="homeBackground">
 
 <div class="container">
   <a href="{% url 'dreams_update' dream.id %}" class="btn btn-outline-warning">Update Dream</a>
+  <a href="{% url 'dreams_delete' dream.id %}" class="btn btn-outline-danger">Delete Dream</a>
 </div>
 
 {% endblock %}
