@@ -9,7 +9,7 @@ type="video/mp4" id="homeBackground">
 <h1>Dreams</h1>
 
 {% for d in dreams %}
-  {% if len(d) > 0 %}
+  {% if dreams %}
     <div class="card">
   
     <!-- <a href="/cats/{{ cat.id }}"> -->
@@ -24,9 +24,9 @@ type="video/mp4" id="homeBackground">
       </a>
     </div>
   {% else %}  
-    <p>There are no dreams yet... let's get dreaming...</p>
-    <a href=""></a>
-    
+    <p class="indexCreate">There are no dreams yet... let's get dreaming...</p>
+    <a href="{% url 'dreams_create' %}" class="indexCreate">Create a dream</a>
+  {% endif %}  
 {% endfor %}
 
 {% endblock %}
