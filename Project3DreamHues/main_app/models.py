@@ -2,10 +2,9 @@ from django.db import models
 from django.urls import reverse
 from django import forms
 from django.contrib.auth.models import User
-
-
-
 from datetime import date
+
+
 # Create your models here.
 FEELING = (
   # for a dropdown menu in regards to feeling of dream
@@ -53,6 +52,9 @@ class Dream(models.Model):
   
   def get_absolute_url(self):
     return reverse('detail', kwargs={'dream_id': self.id})
+  
+  class Meta:
+    ordering = ['-date']
 
 class DreamForm(forms.ModelForm):
   class Meta:
