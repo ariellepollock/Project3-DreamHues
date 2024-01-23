@@ -3,6 +3,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.detail import DetailView
 
 from . models import Dream, DreamForm
 
@@ -27,9 +28,10 @@ def dreams_index(request):
     return render(request, 'dreams/index.html', {'dreams': dreams} )
 
 #GET - Detail
-def dreams_detail(request):
+def dreams_detail(request, dream_id):
+  dream = Dream.objects.get(id=dream_id)
   #TODO Add detail code if needed & code the detail HTML file
-  return render(request, 'dreams/detail.html')
+  return render(request, 'dreams/detail.html', { 'dream': dream})
 
 # - CreateView, for dream form
 class DreamCreate(CreateView):
