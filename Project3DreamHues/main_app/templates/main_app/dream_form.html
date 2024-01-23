@@ -15,12 +15,13 @@ type="video/mp4" id="homeBackground">
     {% endif %}
 
     <form action="" method="POST">
-
         {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>
         <input type="submit" value="LOG DREAM" class="btn btn-primary btn-lg">
     </form>
+
+    
 
 {% endblock %}
