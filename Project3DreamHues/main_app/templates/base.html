@@ -36,6 +36,7 @@
               </li>
               <li class="nav-item px-3">
                 <a href="{% url 'logout' %}"class="nav-link text-white opacity-8">Log Out</a>
+                <a class="nav-link text-white opacity-8" href="{% url 'dreams_create' %}">Add a Dream</a>
               </li>
               {% endif %}
             </ul>
@@ -45,7 +46,7 @@
     </header>
     <main class="container">
 
-      
+
       {% block content %}
         <!-- DO NOT WRITE IN HERE -->
       {% endblock %}

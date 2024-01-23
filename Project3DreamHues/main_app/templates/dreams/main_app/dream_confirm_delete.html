@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h3>Forget Dream</h3>
+
+    <h4>Are you sure you want to forget <span class="teal-text">{{ object.name}} </span>?</h4>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="FORGET MY DREAM" class="btn btn-primary">
+        <a href="{% url 'detail' cat.id %}" class="btn btn-outline-danger">Cancel</a>
+    </form>
+
+{% endblock %}

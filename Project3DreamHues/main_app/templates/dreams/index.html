@@ -1,13 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-  <video playsinline preload="auto" autoplay muted loop 
-  src="{% static 'public/videos/DetailPage.mp4' %}"
-  type="video/mp4" id="homeBackground">
-  </video>
-
-
+<video playsinline preload="auto" autoplay muted loop 
+src="{% static 'public/videos/DetailPage.mp4' %}"
+type="video/mp4" id="homeBackground">
+</video>
 
 <h1>Dreams</h1>
+
+{% for d in dreams %}
+  {% if len(d) > 0 %}
+    <div class="card">
+  
+    <!-- <a href="/cats/{{ cat.id }}"> -->
+      <a href="{% url 'detail' d.id %}">
+        <div class="card-content">
+            <span class="card-title">{{ d.name }}</span>
+            <p>Date: {{ d.date }}</p>
+            <p>Feeling: {{ d.feeling }}</p>
+            <p>Type: {{ d.dream_type }}</p>
+          
+        </div>
+      </a>
+    </div>
+  {% else %}  
+    <p>There are no dreams yet... let's get dreaming...</p>
+    <a href=""></a>
+    
+{% endfor %}
 
 {% endblock %}
