@@ -11,7 +11,13 @@ type="video/mp4" id="homeBackground">
 <div class="container">
   <h1>Welcome to Your Dream</h1>
   <h2>The Night of<h2 class="text-muted"> {{ dream.date }} </h2></h2>
-  <img src="{{ dream.image }}" class="img-fluid" alt="DreamImage">
+
+  {% if dream.image %}
+    <img src="{{ dream.image }}" class="img-fluid" alt="Dream Image">
+  {% else %}
+    <p>No Image Uploaded</p>
+  {% endif %}
+
   <h3>This was a {{ dream.feeling }} {{ dream.dream_type }} kind of night.</h3>
 </div>
 <div class="about lead">
@@ -33,7 +39,7 @@ type="video/mp4" id="homeBackground">
 </div>
 
 <div class="container">
-  <a href="dreams/<int:pk>/update" class="btn btn-outline-warning">Update Dream</a>
+  <a href="{% url 'dreams_update' dream.id %}" class="btn btn-outline-warning">Update Dream</a>
 </div>
 
 {% endblock %}
