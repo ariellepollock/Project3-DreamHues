@@ -19,9 +19,9 @@ def about(request):
 # Get - dreams_index
 def dreams_index(request):
     dreams = Dream.objects.filter()
-    for dream in dreams: #TODO <--- shouldn't this be in the html to render all dreams there?
-      print(dream)
-    return render(request,  {'dreams': dreams}, 'dreams/index.html' )
+    # for dream in dreams: #TODO <--- shouldn't this be in the html to render all dreams there?
+      # print(dream)
+    return render(request, 'dreams/index.html', {'dreams': dreams} )
 
 #GET - Detail
 def dreams_detail(request):
