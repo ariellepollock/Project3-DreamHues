@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 from . models import Dream, DreamForm
 
 import requests
@@ -18,15 +21,30 @@ def about(request):
 
 # Get - dreams_index
 def dreams_index(request):
-    dreams = Dream.objects.filter()
+    dreams = Dream.objects.all()
     # for dream in dreams: #TODO <--- shouldn't this be in the html to render all dreams there?
       # print(dream)
     return render(request, 'dreams/index.html', {'dreams': dreams} )
 
 #GET - Detail
 def dreams_detail(request):
-   #TODO Add detail code if needed & code the detail HTML file
-   return render(request, 'dreams/detail.html')
+  #TODO Add detail code if needed & code the detail HTML file
+  return render(request, 'dreams/detail.html')
+
+# - CreateView, for dream form
+class DreamCreate(CreateView):
+  model = Dream
+  fields = '__all__'
+
+# - UpdateView
+class DreamUpdate(UpdateView):
+  model = Dream
+  fields = ['name', 'about', 'feeling', 'dream_type']
+
+# -DeleteView
+class DreamDelete(DeleteView):
+  model = Dream
+  success_url = '/dreams'
 
 # Get - random palette
 def get_random_palette():
