@@ -18,6 +18,10 @@ import os
 env = environ.Env()
 environ.Env.read_env()
 
+GOOGLE_CLIENT_ID = env.str("GOOGLE_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = env.str("GOOGLE_CLIENT_SECRET")
+GOOGLE_CALLBACK = env.str("GOOGLE_CALLBACK")
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
