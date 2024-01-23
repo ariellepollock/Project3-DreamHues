@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django import forms
 from django.contrib.auth.models import User
 
@@ -48,8 +49,10 @@ class Dream(models.Model):
   dream_palette = Palette
 
   def __str__(self):
-
-        return self.name
+    return self.name
+  
+  def get_absolute_url(self):
+    return reverse('detail', kwargs={'dream_id': self.id})
 
 class DreamForm(forms.ModelForm):
   class Meta:
