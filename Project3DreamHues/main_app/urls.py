@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -10,7 +10,14 @@ urlpatterns = [
 
   # USER THINGS
   # signup page
-  path('signup/', views.signup, name='signup'),
+
+ 
   # log in page
   path('login/', views.login, name='login'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
+
+  # accounts
+  path('accounts/', include('django.contrib.auth.urls')),
+  path('accounts/signup/', views.signup, name='signup'),
+]
+
