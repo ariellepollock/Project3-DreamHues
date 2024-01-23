@@ -9,18 +9,18 @@ type="video/mp4" id="homeBackground">
 
     {% if object %}
         <h3>Edit {{ object.name }}</h3>
-        <a href="{% url 'detail' object.id %}" class="btn btn-info btn-lg">View Details</a>
+        <a href="{% url 'detail' object.id %}" class="btn btn-info btn-lg">Dream Details</a>
     {% else %}
         <h3>Add a Dream</h3>
     {% endif %}
 
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>
         <input type="submit" value="LOG DREAM" class="btn btn-primary btn-lg">
-        <input type="image" href="need from neon" class="">
+        <!-- <input type="image" href="{{ dream.image }}" class=""> -->
     </form>
 
     
