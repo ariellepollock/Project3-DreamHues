@@ -2,9 +2,13 @@
 {% load static %}
 
 {% block content %}
+{% load static %}
 
-<!-- <video playsinline preload="auto" autoplay muted loop src="../static/public/videos/HomeVideo.mp4" type="video/mp4" id="homeBackground">
-</video> -->
+
+  <video playsinline preload="auto" autoplay muted loop 
+  src="{% static 'public/videos/HomePage.mp4' %}"
+  type="video/mp4" id="homeBackground">
+  </video>
 
 
 <div class="jumbotron">
@@ -18,6 +22,7 @@
     <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">New User</a>
   </p>
 </div>
+
 
 
 

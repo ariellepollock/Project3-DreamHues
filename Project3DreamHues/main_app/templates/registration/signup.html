@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 
+<video playsinline preload="auto" autoplay muted loop 
+  src="{% static 'public/videos/LoginPage.mp4' %}"
+  type="video/mp4" id="homeBackground">
+  </video>
 <h1>Sign Up</h1>
 
 <p class="red-text">{{ error_message }}</p>

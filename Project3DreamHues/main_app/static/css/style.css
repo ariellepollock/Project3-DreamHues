@@ -3,6 +3,7 @@ body {
     color: #9a7d7b;
     background-image: url(../../public/imgs/BackImg.png);
 }
+
 body::after {
     content: "";
     background: url(../public/imgs/BackImg.png);
@@ -13,4 +14,15 @@ body::after {
 .bedcloud {
     border: none;
     max-width: 50vmin;
+}
+#homeBackground {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1; 
 }
