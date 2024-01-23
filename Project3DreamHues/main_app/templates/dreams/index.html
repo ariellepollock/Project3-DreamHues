@@ -8,25 +8,24 @@ type="video/mp4" id="homeBackground">
 
 <h1>Dreams</h1>
 
-{% for d in dreams %}
-  {% if dreams %}
-    <div class="card">
-  
-    <!-- <a href="/cats/{{ cat.id }}"> -->
-      <a href="{% url 'detail' d.id %}">
-        <div class="card-content">
-            <span class="card-title">{{ d.name }}</span>
-            <p>Date: {{ d.date }}</p>
-            <p>Feeling: {{ d.feeling }}</p>
-            <p>Type: {{ d.dream_type }}</p>
-          
-        </div>
-      </a>
-    </div>
-  {% else %}  
-    <p class="indexCreate">There are no dreams yet... let's get dreaming...</p>
-    <a href="{% url 'dreams_create' %}" class="indexCreate">Create a dream</a>
-  {% endif %}  
-{% endfor %}
+  {% for d in dreams %}
+    {% if dreams %}
+      <div class="card">
+        <a href="{% url 'detail' d.id %}">
+          <div class="card-content">
+              <span class="card-title">{{ d.name }}</span>
+              <p>Date: {{ d.date }}</p>
+              <p>Feeling: {{ d.feeling }}</p>
+              <p>Type: {{ d.dream_type }}</p>
+            
+          </div>
+        </a>
+      </div>
+    {% else %}  
+      <p class="indexCreate">There are no dreams yet... let's get dreaming...</p>
+      <a href="{% url 'dreams_create' %}" class="indexCreate">Create a dream</a>
+    {% endif %}  
+  {% endfor %}
+
 
 {% endblock %}
