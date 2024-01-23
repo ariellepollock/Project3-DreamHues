@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # STATIC_URL = '/Project3DreamHues/main_app/static/public/videos/'
 STATIC_URL = '/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'videos')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'videos')
 
 
 # Quick-start development settings - unsuitable for production
