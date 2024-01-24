@@ -62,7 +62,7 @@ color: rgb(255, 255, 255);
 .image-banner {
     width: 100vw;
     height: 40vmin;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin: 0;
@@ -70,7 +70,6 @@ color: rgb(255, 255, 255);
     overflow-x: hidden;
     margin-bottom: 20px;
     align-items: center;
-    /* object-fit: contain; */
 }
 
 .container-p {
