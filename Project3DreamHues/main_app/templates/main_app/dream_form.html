@@ -9,28 +9,26 @@ type="video/mp4" id="homeBackground">
 
 {% if object %}
     <h3>Edit {{ object.name }}</h3>
-    <a href="{% url 'detail' object.id %}" class="btn btn-info btn-lg">Dream Details</a>
 {% else %}
     <h3>Add a Dream</h3>
 {% endif %}
 
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="" method="POST">
     {% csrf_token %}
     <table>
         {{ form.as_table }}
     </table>
-    <input type="submit" value="LOG DREAM" class="btn btn-primary btn-lg">
-    <!-- <input type="image" href="{{ dream.image }}" class=""> -->
+    <input type="submit" value="LOG DREAM" class="waves-effect waves-light btn-small btn-us">
 </form>
+
 
 <script>
 const dateEl = document.getElementById('id_date')
 M.Datepicker.init(dateEl, {
-    format: 'yy-mm-dd',
+    format: 'yyyy-mm-dd',
     defaultDate: new Date(),
     setDefaultDate: true,
     autoClose: true,
 })
-const selectEl = document.getElementById('id_date')
 </script>
 {% endblock %}

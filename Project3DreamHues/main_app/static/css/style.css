@@ -13,8 +13,9 @@ html, body {
 }
 
 body {
-    background-color: #1a2839;
-    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar-us {
@@ -27,6 +28,10 @@ body {
 
 .end-link-margin {
     margin-right: 5vmin;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 .bedcloud {
@@ -66,6 +71,12 @@ color: rgb(255, 255, 255);
     text-align: center;
 }
 
+.btn-us {
+    border-radius: 10px;
+    background-color: rgb(217, 237, 255);
+    color:#000000;
+}
+
 /* styling for detail page */
 .image-banner {
     width: 100vw;
@@ -101,6 +112,11 @@ color: rgb(255, 255, 255);
     line-height: normal;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+/* form styling */
+.dream-form {
+    color: white;
 }
 
 
