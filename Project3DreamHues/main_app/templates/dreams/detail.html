@@ -9,21 +9,19 @@ type="video/mp4" id="homeBackground">
 </video>
 
 <!-- Banner Image -->
-<div class="container-fluid">
-  {% if dream.photo_set.first %}
-    <div class="image-banner" style="background-image: url('{{ dream.photo_set.first.url }}');"></div>
-  {% else %}
-    <div class="image-banner">
-      <div class="card-panel teal-text center-align">No Image Uploaded</div>
-    </div>
-  {% endif %}
-</div>
+{% if dream.photo_set.first %}
+  <div class="image-banner" style="background-image: url('{{ dream.photo_set.first.url }}');"></div>
+{% else %}
+  <div class="image-banner">
+    <div class="right-align">No Image Uploaded</div>
+  </div>
+{% endif %}
 
 <!-- Image Upload Form -->
-<div class="container">
-  <form action="{% url 'add_photo' dream.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+<div class="container-p">
+  <form action="{% url 'add_photo' dream.id %}" enctype="multipart/form-data" method="POST" class="">
     {% csrf_token %}
-    <input type="file" name="photo-file"><button type="submit" class="btn btn-info btn-lg">Upload Photo</button>
+    <input type="file" name="photo-file"><button type="submit" class="btn-img">UPLOAD PHOTO</button>
   </form>
 </div>
 
@@ -37,7 +35,13 @@ type="video/mp4" id="homeBackground">
   </div>
 </div>
 
-<div class="d-flex">
+<div id="main_wrapper" class>
+  <div class="row colors" id="colors">
+
+  </div>
+</div>
+
+<!-- <div class="d-flex">
   <table class="table">
     <thead>
       <tr>
@@ -49,7 +53,8 @@ type="video/mp4" id="homeBackground">
       </tr>
     </thead>
   </table>
-</div>
+</div> -->
+
 
 <div class="container">
   <a href="{% url 'index' %}" class="btn btn-outline-warning">Back to Dreams</a>
