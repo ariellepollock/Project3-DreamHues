@@ -73,6 +73,9 @@ def get_imgix_palette(image_url):
         'url': image_url,
         'count': 5,
     }
+    headers = {
+        'Content-Type': 'application/json',
+    }
     response = requests.post(imgix_url, json=payload)
 
     if response.status_code == 200:
