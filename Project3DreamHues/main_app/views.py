@@ -1,3 +1,7 @@
+import os
+import uuid
+import boto3
+
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -5,10 +9,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 
-from . models import Dream, DreamForm
+from . models import Dream, DreamForm, Photo
 
 import requests
 import json
+
 
 # Create your views here.
 
@@ -22,15 +27,13 @@ def about(request):
 
 # Get - dreams_index
 def dreams_index(request):
-    dreams = Dream.objects.all()
-    # for dream in dreams: #TODO <--- shouldn't this be in the html to render all dreams there?
-      # print(dream)
-    return render(request, 'dreams/index.html', {'dreams': dreams} )
+  dreams = Dream.objects.all()
+  # print(dream)
+  return render(request, 'dreams/index.html', {'dreams': dreams} )
 
 #GET - Detail
 def dreams_detail(request, dream_id):
   dream = Dream.objects.get(id=dream_id)
-  #TODO Add detail code if needed & code the detail HTML file
   return render(request, 'dreams/detail.html', { 'dream': dream})
 
 # - CreateView, for dream form
@@ -50,13 +53,32 @@ class DreamDelete(DeleteView):
 
 # Get - random palette
 def get_random_palette():
-    url = 'http://colormind.io/api/'
-    payload = {"model": "default"}
-    response = requests.post(url, data=json.dumps(payload))
-    if response.status_code == 200:
-        return response.json()['result']
-    else:
-        return None
+  url = 'http://colormind.io/api/'
+  payload = {"model": "default"}
+  response = requests.post(url, data=json.dumps(payload))
+  if response.status_code == 200:
+    return response.json()['result']
+  else:
+    return None
+
+# add_photo
+def add_photo(request, dream_id):
+  photo_file = request.FILES.get('photo-file', None)
+  if photo_file:
+    s3 = boto3.client('s3')
+    key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+
+    try:
+      bucket = os.environ['S3_BUCKET']
+      s3.upload_fileobj(photo_file, bucket, key)
+      url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
+      Photo.objects.create(url=url, dream_id=dream_id)
+
+    except Exception as e:
+      print('woah nelly! an error occurred uploading your file')
+      print(e)
+
+  return redirect('detail', dream_id=dream_id)
 
 # USER STUFF
 # sign up page

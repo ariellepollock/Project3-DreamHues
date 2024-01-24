@@ -45,7 +45,6 @@ class Dream(models.Model):
     choices=TYPE,
     default=TYPE[0][1]
   )
-  image = models.ImageField(upload_to='dream_images/', blank=True, null=True)
   dream_palette = Palette
 
   def __str__(self):
@@ -60,7 +59,11 @@ class Dream(models.Model):
 class DreamForm(forms.ModelForm):
   class Meta:
     model = Dream
-    fields = ['date', 'name', 'about', 'feeling', 'dream_type', 'image']
+    fields = ['date', 'name', 'about', 'feeling', 'dream_type']
 
+class Photo(models.Model):
+  url = models.CharField(max_length=200)
+  dream = models.ForeignKey(Dream, on_delete=models.CASCADE)
 
-
+  def __str__(self):
+    return f"dream_id: {self.dream_id} @{self.url}"

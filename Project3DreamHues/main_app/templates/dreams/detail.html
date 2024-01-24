@@ -8,20 +8,33 @@ src="{% static 'public/videos/DetailPage.mp4' %}"
 type="video/mp4" id="homeBackground">
 </video>
 
-<div class="container">
-  <h1>Welcome to Your Dream</h1>
-  <h2>The Night of<h2 class="text-muted"> {{ dream.date }} </h2></h2>
-
-  {% if dream.image %}
-    <img src="{{ dream.image }}" class="img-fluid" alt="Dream Image">
+<!-- Banner Image -->
+<div class="container-fluid">
+  {% if dream.photo_set.first %}
+    <div class="image-banner" style="background-image: url('{{ dream.photo_set.first.url }}');"></div>
   {% else %}
-    <p>No Image Uploaded</p>
+    <div class="image-banner">
+      <div class="card-panel teal-text center-align">No Image Uploaded</div>
+    </div>
   {% endif %}
-
-  <h3>This was a {{ dream.feeling }} {{ dream.dream_type }} kind of night.</h3>
 </div>
-<div class="about lead">
-  <p> {{ dream.about }} </p>
+
+<!-- Image Upload Form -->
+<div class="container">
+  <form action="{% url 'add_photo' dream.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+    {% csrf_token %}
+    <input type="file" name="photo-file"><button type="submit" class="btn btn-info btn-lg">Upload Photo</button>
+  </form>
+</div>
+
+<!-- Dream Details -->
+<div class="container">
+  <h1>{{ dream.name }}</h1>
+  <h2 class="text">The night of {{ dream.date }}</h2>
+  <h3>This was a {{ dream.feeling }} {{ dream.dream_type }} kind of night.</h3>
+  <div class="about lead">
+    <p>{{ dream.about }}</p>
+  </div>
 </div>
 
 <div class="d-flex">
@@ -44,6 +57,10 @@ type="video/mp4" id="homeBackground">
   <a href="{% url 'index' %}" class="btn btn-outline-warning">Back to Dreams</a>
 
   <a href="{% url 'dreams_update' dream.id %}" class="btn btn-outline-warning">Update Dream</a>
+
+  <a href="{% url 'dreams_delete' dream.id %}" class="btn btn-outline-danger">Delete Dream</a>
+=======
+
 
 </div>
 

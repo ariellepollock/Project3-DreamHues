@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
+
+<video playsinline preload="auto" autoplay muted loop 
+src="{% static 'public/videos/DetailPage.mp4' %}"
+type="video/mp4" id="homeBackground">
+</video>
 
     <h3>Forget Dream</h3>
 
@@ -8,7 +14,7 @@
     <form action="" method="POST">
         {% csrf_token %}
         <input type="submit" value="FORGET MY DREAM" class="btn btn-primary">
-        <a href="{% url 'detail' cat.id %}" class="btn btn-outline-danger">Cancel</a>
+        <a href="{% url 'detail' dream.id %}" class="btn btn-outline-danger">Cancel</a>
     </form>
 
 {% endblock %}

@@ -12,6 +12,7 @@ urlpatterns = [
   path('dreams/create', views.DreamCreate.as_view(), name='dreams_create'),
   path('dreams/<int:pk>/update', views.DreamUpdate.as_view(), name='dreams_update'),
   path('dreams/<int:pk>/delete', views.DreamDelete.as_view(), name='dreams_delete'),
+  path('dreams/<int:dream_id>/add_photo/', views.add_photo, name='add_photo'),
   # USER THINGS
   # log in page
   path('login/', views.custom_login, name='login'),
