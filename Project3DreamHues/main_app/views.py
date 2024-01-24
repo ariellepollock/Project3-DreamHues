@@ -37,7 +37,7 @@ def dreams_index(request):
 #GET - Detail
 def dreams_detail(request, dream_id):
   dream = Dream.objects.get(id=dream_id)
-  palette = get.imgix_palette(dream.photo_set.last().url) if dream.photo_set.last() else None
+  palette = get_imgix_palette(dream.photo_set.last().url) if dream.photo_set.last() else None
   return render(request, 'dreams/detail.html', { 'dream': dream, 'palette': palette})
 
 # - CreateView, for dream form
