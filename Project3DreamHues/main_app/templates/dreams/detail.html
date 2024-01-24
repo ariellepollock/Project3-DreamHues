@@ -4,14 +4,14 @@
 
 
 <video playsinline preload="auto" autoplay muted loop 
-src="{% static 'public/videos/DetailPage.mp4' %}"
+src="{% static 'public/videos/DetailVideo.mp4' %}"
 type="video/mp4" id="homeBackground">
 </video>
 
 <!-- Banner Image -->
 <div class="container-fluid">
   {% if dream.photo_set.first %}
-    <div class="image-banner" style="background-image: url('{{ dream.photo_set.first.url }}');"></div>
+  <div class="image-banner" style="background-image: url('{{ dream.photo_set.first.url }}'); "></div>
   {% else %}
     <div class="image-banner">
       <div class="card-panel teal-text center-align">No Image Uploaded</div>
@@ -59,7 +59,7 @@ type="video/mp4" id="homeBackground">
   <a href="{% url 'dreams_update' dream.id %}" class="btn btn-outline-warning">Update Dream</a>
 
   <a href="{% url 'dreams_delete' dream.id %}" class="btn btn-outline-danger">Delete Dream</a>
-=======
+
 
 
 </div>
