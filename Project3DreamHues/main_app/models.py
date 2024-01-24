@@ -73,6 +73,9 @@ class DreamForm(forms.ModelForm):
     else:
       self.fields['date'].widget = forms.HiddenInput()
 
+    self.fields['feeling'].widget = forms.Select(choices=FEELING)
+    self.fields['dream_type'].widget = forms.Select(choices=TYPE)
+
 class Photo(models.Model):
   url = models.CharField(max_length=200)
   dream = models.ForeignKey(Dream, on_delete=models.CASCADE)
