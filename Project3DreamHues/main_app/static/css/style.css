@@ -17,6 +17,10 @@ body {
     color: white;
 }
 
+.navbar-us {
+    background-color: transparent;
+}
+
 .bedcloud {
     border: none;
     max-width: 50vmin;
