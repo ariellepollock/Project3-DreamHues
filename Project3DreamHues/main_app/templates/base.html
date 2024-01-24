@@ -13,30 +13,20 @@
   </head>
   <body>
     <header class="navbar-fixed">
-      <nav>
+      <nav class="navbar-us">
         <div class="nav-wrapper">
-          <a class="navbar-brand text-white" href="{% url 'home' %}" rel="tooltip" data-placement="bottom">Dreamhues</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navigation">
-            <ul class="navbar-nav navbar-nav-hover mx-auto">
-              <li class="nav-item px-3">
-                <a href="{% url 'about' %}"class="nav-link text-white opacity-8">About</a>
-              </li>
-              {% if user.is_authenticated %}
-              <li class="nav-item px-3">
-                <a class="nav-link text-white opacity-8" href="{% url 'index' %}">Dreams</a>
-              </li>
-              <li class="nav-item px-3">
-                <a class="nav-link text-white opacity-8" href="{% url 'dreams_create' %}">Add a Dream</a>
-              </li>
-              <li>
-                <a href="{% url 'logout' %}"class="nav-link text-white opacity-8">Log Out</a>
-              </li>
-              {% endif %}
-            </ul>
-          </div>
+          <ul>
+            <li>
+              <a href="{% url 'home' %}" class="left brand-logo logo-margin">Dreamhues</a>
+            </li>
+          </ul>
+          <ul class="right">
+            <li><a href="{% url 'about' %}">ABOUT</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'index' %}">MY DREAMS</a></li>
+            <li><a href="{% url 'dreams_create' %}">ADD A DREAM</a></li>
+            <li><a href="{% url 'logout' %}" class="end-link-margin">LOG OUT</a></li>
+            {% endif %}
         </div>
       </nav>
     </header>

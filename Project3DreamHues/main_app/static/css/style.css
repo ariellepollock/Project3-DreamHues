@@ -21,6 +21,14 @@ body {
     background-color: transparent;
 }
 
+.logo-margin {
+    margin-left: 5vmin;
+}
+
+.end-link-margin {
+    margin-right: 5vmin;
+}
+
 .bedcloud {
     border: none;
     max-width: 50vmin;
