@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.models import User
 from datetime import date
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView
+from django.views.generic.list import ListView
 
 
 # Create your models here.
@@ -79,3 +79,11 @@ class Photo(models.Model):
 
   def __str__(self):
     return f"dream_id: {self.dream_id} @{self.url}"
+  
+class DreamListView(LoginRequiredMixin, ListView):
+  model = Dream
+  template_name = 'dreams/index.html'
+  context_object_name = 'dreams'
+
+  def get_queryset(self):
+    return Dream.objects.efilter(owner=self.request.user)

@@ -6,7 +6,7 @@ import boto3
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-# from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
@@ -28,8 +28,9 @@ def about(request):
   return render(request, 'about.html')
 
 # Get - dreams_index
+@login_required
 def dreams_index(request):
-  dreams = Dream.objects.all()
+  dreams = Dream.objects.filter(owner=request.user)
   # print(dream)
   return render(request, 'dreams/index.html', {'dreams': dreams} )
 
