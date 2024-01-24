@@ -11,7 +11,7 @@ type="video/mp4" id="homeBackground">
 
 {% for d in dreams %}
 {% if dreams %}
-<div class="card-deck indexCard">
+<div class="card-deck indexCard ">
 
 <!-- <a href="/cats/{{ cat.id }}"> -->
   
@@ -29,7 +29,13 @@ type="video/mp4" id="homeBackground">
           <h6>A bad dream</h6>
         {% endif %}
 
-        <h6>Type: {{ d.dream_type }}</h6>
+        {% if d.dream_type == 'N' %}
+          <h6>Nightmare!</h6>
+        {% elif d.dream_type == 'A' %}  
+          <h6>An amazing dream</h6>
+        {% elif d.dream_type == 'W' %}  
+          <h6>A weird dream</h6>
+        {% endif %}
 
         <a href="{% url 'detail' d.id %}">Dream Details</a>
     </div>
