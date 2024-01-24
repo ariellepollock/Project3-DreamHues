@@ -1,10 +1,12 @@
 import os
+from typing import Any
 import uuid
 import boto3
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
@@ -37,9 +39,20 @@ def dreams_detail(request, dream_id):
   return render(request, 'dreams/detail.html', { 'dream': dream})
 
 # - CreateView, for dream form
+
 class DreamCreate(CreateView):
   model = Dream
-  fields = '__all__'
+  form_class = DreamForm
+  # template_name = 'dream_form.html'
+
+  def form_valid(self, form):
+    form.instance.owner = self.request.user
+    return super().form_valid(form)
+  
+  def get_form_kwargs(self):
+    kwargs = super().get_form_kwargs()
+    kwargs['user'] = self.request.user
+    return kwargs
 
 # - UpdateView
 class DreamUpdate(UpdateView):
