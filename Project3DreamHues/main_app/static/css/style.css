@@ -3,6 +3,11 @@
     src: url('/static/public/fonts/Amita-Regular.ttf');
 }
 
+@font-face{
+    font-family: 'Sevillana';
+    src: url('/static/public/fonts/sevillana/Sevillana-Regular.ttf')
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -32,6 +37,13 @@ body {
 
 main {
     flex: 1 0 auto;
+}
+
+.title{
+    font-family: 'Sevillana';
+    text-shadow: 0 0 5px #1b03f5, 0 0 5px #fcfbfb;
+    color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 .bedcloud {
