@@ -23,4 +23,15 @@ type="video/mp4" id="homeBackground">
     <!-- <input type="image" href="{{ dream.image }}" class=""> -->
 </form>
 
+<script>
+const dateEl = document.getElementById('id_date')
+M.Datepicker.init(dateEl, {
+    format: 'yy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true,
+})
+const selectEl = document.getElementById('id_date')
+</script>
+
 {% endblock %}
