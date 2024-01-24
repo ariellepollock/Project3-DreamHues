@@ -29,5 +29,11 @@ M.Datepicker.init(dateEl, {
     setDefaultDate: true,
     autoClose: true,
 })
+
+// Initialize Materialize select elements
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('select');
+    M.FormSelect.init(elems);
+});
 </script>
 {% endblock %}
