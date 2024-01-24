@@ -12,11 +12,18 @@ type="video/mp4" id="homeBackground">
   <h1>Welcome to Your Dream</h1>
   <h2>The Night of<h2 class="text"> {{ dream.date }} </h2></h2>
 
-  {% if dream.image %}
-    <img src="{{ dream.image }}" class="img-fluid" alt="Dream Image">
-  {% else %}
-    <p>No Image Uploaded</p>
-  {% endif %}
+  {% for photo in dream.photo_set.all %}
+    <img class="responsive-img card-panel" src="{{photo.url}}">
+  {% empty %}
+    <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+  {% endfor %}
+
+  <form action="{% url 'add_photo' dream.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+    {% csrf_token %}
+    <input type="file" name="photo-file">
+    <br><br>
+    <button type="submit" class="btn btn-info btn-lg">Upload Photo</button>
+  </form>
 
   <h3>This was a {{ dream.feeling }} {{ dream.dream_type }} kind of night.</h3>
 </div>
