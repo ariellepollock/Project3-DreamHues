@@ -225,5 +225,10 @@ color: rgb(255, 255, 255);
     color: white;
 }
 
-
+.form-field {
+    background-color: #ffffff;
+    color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
 
