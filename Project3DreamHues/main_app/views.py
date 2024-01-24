@@ -74,7 +74,7 @@ def get_imgix_palette(image_url):
         'count': 5,
     }
     headers = {
-        'Content-Type': 'application/json',
+      'Content-Type': 'application/json',
     }
     response = requests.post(imgix_url, json=payload)
 
@@ -96,7 +96,7 @@ def add_photo(request, dream_id):
       url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
       #Imgix API Palette Generation
       palette = get_imgix_palette(url)
-      return render(request, 'dreams/add_photo.html', {'dream.id': dream_id, 'url': url, 'palette': palette})
+      return render(request, 'dreams/add_photo.html', {'dream_id': dream_id, 'url': url, 'palette': palette})
     except Exception as e:
       print('woah nelly! an error occurred uploading your file')
       print(e)
