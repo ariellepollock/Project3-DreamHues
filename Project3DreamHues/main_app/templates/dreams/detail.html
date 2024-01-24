@@ -10,8 +10,10 @@ type="video/mp4" id="homeBackground">
 
 <!-- Banner Image -->
 
-{% if dream.photo_set.first %}
-  <div class="image-banner" style="background-image: url('{{ dream.photo_set.first.url }}');"></div>
+
+{% if dream.photo_set.last %}
+  <div class="image-banner" style="background-image: url('{{ dream.photo_set.last.url }}');"></div>
+
 {% else %}
   <div class="image-banner">
     <div class="right-align">No Image Uploaded</div>
@@ -21,9 +23,11 @@ type="video/mp4" id="homeBackground">
 
 <!-- Image Upload Form -->
 <div class="container-p">
-  <form action="{% url 'add_photo' dream.id %}" enctype="multipart/form-data" method="POST" class="">
+  <form action="{% url 'add_photo' dream.id %}" enctype="multipart/form-data" method="POST">
     {% csrf_token %}
-    <input type="file" name="photo-file"><button type="submit" class="btn-img">UPLOAD PHOTO</button>
+    <input type="file" name="photo-file" id="photo-file" class="input-file" hidden>
+    <label for="photo-file" class="btn-img">SELECT PHOTO</label>
+    <button type="submit" class="btn-img">UPLOAD</button>
   </form>
 </div>
 
