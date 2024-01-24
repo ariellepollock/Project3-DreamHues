@@ -58,7 +58,7 @@ class DreamCreate(CreateView):
 # - UpdateView
 class DreamUpdate(UpdateView):
   model = Dream
-  fields = ['name', 'about', 'feeling', 'dream_type']
+  fields = '__all__'
 
 # -DeleteView
 class DreamDelete(DeleteView):
