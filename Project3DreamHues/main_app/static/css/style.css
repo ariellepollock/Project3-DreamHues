@@ -3,6 +3,15 @@
     src: url('/static/public/fonts/Amita-Regular.ttf');
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #1a2839;
     color: white;
@@ -45,11 +54,37 @@ color: rgb(255, 255, 255);
     text-align: center;
 }
 
+/* styling for detail page */
 .image-banner {
-    width: 100%;
-    height: 500px;
+    width: 100vw;
+    height: 40vmin;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
     margin-bottom: 20px;
 }
+
+.container-p {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5vmin;
+}
+
+.btn-img {
+    border: none;
+    outline: none;
+    padding: 0.25rem 0.5rem;
+    margin: 0;
+    background-color: white;
+    color: #000000;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
