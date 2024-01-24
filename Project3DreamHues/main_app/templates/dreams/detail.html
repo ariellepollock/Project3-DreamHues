@@ -2,6 +2,32 @@
 {% block content %}
 {% load static %}
 
+<style>
+  {% if palette %}
+  .image-banner {
+      filter: brightness(0.8);
+  }
+
+  .container {
+      background-color: {{ palette.0 }};
+  }
+
+  h1, h2, h3, .about {
+      color: {{ palette.1 }};
+  }
+
+  .btn-img {
+      background-color: {{ palette.2 }};
+      color: {{ palette.3 }};
+  }
+
+  .btn-outline-warning {
+      border-color: {{ palette.4 }}
+      color: {{ palette.4 }}
+  }
+{% endif %}
+</style>
+
 
 <video playsinline preload="auto" autoplay muted loop 
 src="{% static 'public/videos/DetailVideo.mp4' %}"
@@ -9,8 +35,6 @@ type="video/mp4" id="homeBackground">
 </video>
 
 <!-- Banner Image -->
-
-
 {% if dream.photo_set.last %}
   <div class="image-banner" style="background-image: url('{{ dream.photo_set.last.url }}');"></div>
 
@@ -40,27 +64,6 @@ type="video/mp4" id="homeBackground">
     <p>{{ dream.about }}</p>
   </div>
 </div>
-
-<div id="main_wrapper" class>
-  <div class="row colors" id="colors">
-
-  </div>
-</div>
-
-<!-- <div class="d-flex">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col"> {{ dream.dream_palette.color1 }} </th>
-        <th scope="col"> {{ dream.dream_palette.color2 }} </th>
-        <th scope="col"> {{ dream.dream_palette.color3 }} </th>
-        <th scope="col"> {{ dream.dream_palette.color4 }} </th>
-        <th scope="col"> {{ dream.dream_palette.color5 }} </th>
-      </tr>
-    </thead>
-  </table>
-</div> -->
-
 
 <div class="container">
   <a href="{% url 'index' %}" class="btn btn-outline-warning">Back to Dreams</a>

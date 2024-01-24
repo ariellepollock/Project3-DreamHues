@@ -37,7 +37,8 @@ def dreams_index(request):
 #GET - Detail
 def dreams_detail(request, dream_id):
   dream = Dream.objects.get(id=dream_id)
-  return render(request, 'dreams/detail.html', { 'dream': dream})
+  palette = get.imgix_palette(dream.photo_set.last().url) if dream.photo_set.last() else None
+  return render(request, 'dreams/detail.html', { 'dream': dream, 'palette': palette})
 
 # - CreateView, for dream form
 
@@ -66,14 +67,18 @@ class DreamDelete(DeleteView):
   success_url = '/dreams'
 
 # Get - random palette
-def get_random_palette():
-  url = 'http://colormind.io/api/'
-  payload = {"model": "default"}
-  response = requests.post(url, data=json.dumps(payload))
-  if response.status_code == 200:
-    return response.json()['result']
-  else:
-    return None
+def get_imgix_palette(image_url):
+    imgix_url = 'https://api.imgix.com/v2/palette'
+    payload = {
+        'url': image_url,
+        'count': 5,
+    }
+    response = requests.post(imgix_url, json=payload)
+
+    if response.status_code == 200:
+        return response.json()['data']['palette']
+    else:
+        return None
 
 # add_photo
 def add_photo(request, dream_id):
@@ -86,8 +91,9 @@ def add_photo(request, dream_id):
       bucket = os.environ['S3_BUCKET']
       s3.upload_fileobj(photo_file, bucket, key)
       url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
-      Photo.objects.create(url=url, dream_id=dream_id)
-
+      #Imgix API Palette Generation
+      palette = get_imgix_palette(url)
+      return render(request, 'dreams/add_photo.html', {'dream.id': dream_id, 'url': url, 'palette': palette})
     except Exception as e:
       print('woah nelly! an error occurred uploading your file')
       print(e)
