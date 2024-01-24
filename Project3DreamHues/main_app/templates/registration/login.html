@@ -11,7 +11,7 @@ type="video/mp4" id="homeBackground">
 
 <h1 class="loginTitle">Welcome back, <br> Please log In...</h1>
  
-<form method="POST" action="{% url 'login' %}" class="signupTitle">
+<form method="POST" action="{% url 'login' %}" class="signupTitle loginForm">
   {% csrf_token %}
   {{ form.as_p }}
   <input type="hidden" name="next" value="{{ next }}" >

@@ -107,6 +107,7 @@ main {
     font-family: 'Varela Round';
     text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
     color: rgb(255, 255, 255);
+    padding-left: 5vw;
 }
 
 .loginBtn {
@@ -116,16 +117,22 @@ main {
 }
 
 .loginForm{
-    background-color: #fcfbfb;
-    opacity: 0.5;
+    padding: 5vw;
 }
-
 
 /***************************************** Signup Page ****************************************/
 .signupTitle{
     font-family: 'Varela Round';
     text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
     color: rgb(255, 255, 255);
+}
+
+.signup{
+    padding-left: 5vw;
+}
+
+.signupForm{
+    padding: 5vw;
 }
 
 .helptext{
