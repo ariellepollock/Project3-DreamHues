@@ -1,6 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
-
 {% block content %}
 {% load static %}
 
@@ -12,10 +10,9 @@
 
 
 <div class="jumbotron">
-  <h1 class="display-4">Hello, Dreamers!</h1>
+  <h1 class="display-4">Hello, Dreamer!</h1>
   <p class="lead">Welcome to Dreamhues</p>
-  <img src="{% static 'public/imgs/bedcloudnob.png' %}" class="img-fluid bedcloud" alt="bed on a cloud">
-  <hr class="my-4">
+  <img src="{% static 'public/imgs/bedcloudnob.png' %}" class="bedcloud" alt="bed on a cloud">
   {% if not user.is_authenticated %}
   <p>Let's get Started</p>
   <p class="lead">
