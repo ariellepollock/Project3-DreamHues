@@ -21,6 +21,14 @@ body {
     background-color: transparent;
 }
 
+.logo-margin {
+    margin-left: 5vmin;
+}
+
+.end-link-margin {
+    margin-right: 5vmin;
+}
+
 .bedcloud {
     border: none;
     max-width: 50vmin;
@@ -50,7 +58,7 @@ color: rgb(255, 255, 255);
     text-align: center;
     /* width: 30vw; */
     align-self: center;
-    background: none;
+    /* background: none; */
     border: none;
 }
 
@@ -62,7 +70,7 @@ color: rgb(255, 255, 255);
 .image-banner {
     width: 100vw;
     height: 40vmin;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin: 0;
@@ -70,7 +78,6 @@ color: rgb(255, 255, 255);
     overflow-x: hidden;
     margin-bottom: 20px;
     align-items: center;
-    /* object-fit: contain; */
 }
 
 .container-p {

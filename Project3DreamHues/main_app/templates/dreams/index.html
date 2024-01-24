@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block content %}
+{% load static %}
 <video playsinline preload="auto" autoplay muted loop 
 src="{% static 'public/videos/DetailPage.mp4' %}"
 type="video/mp4" id="homeBackground">
@@ -11,40 +11,49 @@ type="video/mp4" id="homeBackground">
 
 {% for d in dreams %}
 {% if dreams %}
-<div class="card indexCard ">
-
-<!-- <a href="/cats/{{ cat.id }}"> -->
-  
-    <div class="card-content amitaFont">
-        <h5 class="amitaFont">{{ d.name }}</h5>
+  <div class="row indexCard ">  
+    <div class="col s12 m7 amitaFont">
+      <div class="card">
+        <div class="card-image">
+          <div class="image-banner" style="background-image: url('{{ dream.photo_set.last.url }}');"></div>
+          <span class="card-title amitaFont">{{ d.name }}</span>
+        </div>
+          <div class="card-content">
+          <!-- <h5 class="amitaFont"></h5> -->
       
-        <h6>Date: {{ d.date }}</h6>
-        {% if d.feeling == 'G' %}
-          <h6>A good feeling dream</h6>
-        {% elif d.feeling == 'O' %}  
-          <h6>An okay dream</h6>
-        {% elif d.feeling == 'N' %}  
-          <h6>Not a good dream</h6>
-        {% elif d.feeling == 'B' %}  
-          <h6>A bad dream</h6>
-        {% endif %}
+          <h6>Date: {{ d.date }}</h6>
+          {% if d.feeling == 'G' %}
+            <h6>A good feeling dream</h6>
+          {% elif d.feeling == 'O' %}  
+            <h6>An okay dream</h6>
+          {% elif d.feeling == 'N' %}  
+            <h6>Not a good dream</h6>
+          {% elif d.feeling == 'B' %}  
+            <h6>A bad dream</h6>
+          {% endif %}
 
-        {% if d.dream_type == 'N' %}
-          <h6>Nightmare!</h6>
-        {% elif d.dream_type == 'A' %}  
-          <h6>An amazing dream</h6>
-        {% elif d.dream_type == 'W' %}  
-          <h6>A weird dream</h6>
-        {% endif %}
+          {% if d.dream_type == 'N' %}
+            <h6>Nightmare!</h6>
+          {% elif d.dream_type == 'A' %}  
+            <h6>An amazing dream</h6>
+          {% elif d.dream_type == 'W' %}  
+            <h6>A weird dream</h6>
+          {% endif %}
 
-        <a href="{% url 'detail' d.id %}">Dream Details</a>
+          {% else %}  
+            <p class="indexCreate">There are no dreams yet... let's get dreaming...</p>
+            <a href="{% url 'dreams_create' %}" class="indexCreate">Create a dream</a>
+          {% endif %}
+
+        </div>
+        <div class="card-action">
+          <a href="{% url 'detail' d.id %}">Dream Details</a>
+        </div>
+      
+      </div>
     </div>
+  </div>
   
-</div>
-{% else %}  
-  <p class="indexCreate">There are no dreams yet... let's get dreaming...</p>
-  <a href="{% url 'dreams_create' %}" class="indexCreate">Create a dream</a>
-{% endif %}  
 {% endfor %}
 
 
