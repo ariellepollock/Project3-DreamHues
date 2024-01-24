@@ -3,6 +3,8 @@ from django.urls import reverse
 from django import forms
 from django.contrib.auth.models import User
 from datetime import date
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import CreateView
 
 
 # Create your models here.
@@ -45,21 +47,31 @@ class Dream(models.Model):
     choices=TYPE,
     default=TYPE[0][1]
   )
-  dream_palette = Palette
+  # dream_palette = models.ForeignKey(Palette, on_delete=models.CASCADE)  # Add the Palette field
+
+  # Adds an owner field to link the dream to a user
+  owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='dreams', default=None) 
 
   def __str__(self):
     return self.name
   
   def get_absolute_url(self):
     return reverse('detail', kwargs={'dream_id': self.id})
-  
   # class Meta:
   #   ordering = ['-date']
 
 class DreamForm(forms.ModelForm):
   class Meta:
     model = Dream
-    fields = ['date', 'name', 'about', 'feeling', 'dream_type']
+    fields = ['date', 'name', 'about', 'feeling', 'dream_type', ]  # Include dream_palette
+
+  def __init__(self, *args, **kwargs):
+    user = kwargs.pop('user', None)
+    super().__init__(*args, **kwargs)
+    if user:
+      self.instance.owner = user
+    else:
+      self.fields['date'].widget = forms.HiddenInput()
 
 class Photo(models.Model):
   url = models.CharField(max_length=200)
