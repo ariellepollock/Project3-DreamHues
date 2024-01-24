@@ -8,6 +8,11 @@
     src: url('/static/public/fonts/sevillana/Sevillana-Regular.ttf')
 }
 
+@font-face{
+    font-family: 'Varela Round';
+    src: url('/static/public/fonts/varela_round/VarelaRound-Regular.ttf')
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -39,16 +44,45 @@ main {
     flex: 1 0 auto;
 }
 
+/***************************************** Home Page ****************************************/
+.navTitle{
+    font-family: 'Varela Round';
+    text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
+    color: rgb(255, 255, 255);
+}
+
 .title{
+    font-family: 'Sevillana';
+    text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-bottom: -3vw;
+
+}
+
+.smallTitle{
     font-family: 'Sevillana';
     text-shadow: 0 0 5px #1b03f5, 0 0 5px #fcfbfb;
     color: rgb(255, 255, 255);
     text-align: center;
+    font-size: 5vw;
+}
+
+.bottomTitle{
+    font-family: 'Sevillana';
+    text-shadow: 0 0 5px #1b03f5, 0 0 5px #fcfbfb;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    font-size: 2vw;
 }
 
 .bedcloud {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
     border: none;
     max-width: 50vmin;
+    margin-top: -3vw;
 }
 
 #homeBackground {
@@ -63,6 +97,51 @@ main {
     z-index: -1; 
 }
 
+/***************************************** Login Page ****************************************/
+.loginTitle{
+    font-family: 'Varela Round';
+    text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
+    color: rgb(255, 255, 255);
+}
+
+.loginBtn {
+    font-family: 'Varela Round';
+    text-shadow: 0 0 5px #01000a, 0 0 5px #ffffff;
+    color: rgb(255, 255, 255);
+}
+
+.loginForm{
+    background-color: #fcfbfb;
+    opacity: 0.5;
+}
+
+
+/***************************************** Signup Page ****************************************/
+.signupTitle{
+    font-family: 'Varela Round';
+    text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
+    color: rgb(255, 255, 255);
+}
+
+.helptext{
+    font-family: 'Varela Round';
+    text-shadow: 0 0 5px #ff0000, 0 0 5px #ffffff;
+    color: rgb(255, 255, 255);
+}
+
+li{
+    font-family: 'Varela Round';
+    text-shadow: 0 0 5px #f50303, 0 0 5px #ffffff;
+    color: rgb(255, 255, 255);
+}
+
+p{
+    font-family: 'Varela Round';
+    text-shadow: 0 0 5px #020202, 0 0 5px #000000;
+    color: rgb(253, 253, 253);
+}
+
+/***************************************** Dream Index Page ****************************************/
 .amitaFont {
 font-family: 'Amita';
 font-weight: bold;
@@ -81,6 +160,9 @@ color: rgb(255, 255, 255);
 
 .pageTitle{
     text-align: center;
+    font-family: 'Varela Round';
+    text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .btn-us {
@@ -125,6 +207,7 @@ color: rgb(255, 255, 255);
     transition: background-color 0.3s ease;
 }
 
+/***************************************** Dream Form Page ****************************************/
 /* form styling */
 .dream-form {
     color: white;

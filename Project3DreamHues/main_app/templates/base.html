@@ -17,15 +17,15 @@
         <div class="nav-wrapper">
           <ul>
             <li>
-              <a href="{% url 'home' %}" class="left brand-logo logo-margin">Dreamhues</a>
+              <a href="{% url 'home' %}" class="left brand-logo logo-margin navTitle">Dreamhues</a>
             </li>
           </ul>
           <ul class="right">
-            <li><a href="{% url 'about' %}">ABOUT</a></li>
+            <li><a href="{% url 'about' %}" class="navTitle">ABOUT</a></li>
             {% if user.is_authenticated %}
-            <li><a href="{% url 'index' %}">MY DREAMS</a></li>
-            <li><a href="{% url 'dreams_create' %}">ADD A DREAM</a></li>
-            <li><a href="{% url 'logout' %}" class="end-link-margin">LOG OUT</a></li>
+            <li><a href="{% url 'index' %}" class="navTitle">MY DREAMS</a></li>
+            <li><a href="{% url 'dreams_create' %}" class="navTitle">ADD A DREAM</a></li>
+            <li><a href="{% url 'logout' %}" class="end-link-margin navTitle">LOG OUT</a></li>
             {% endif %}
         </div>
       </nav>

@@ -5,18 +5,17 @@
 
 
 <video playsinline preload="auto" autoplay muted loop 
-src="{% static 'public/videos/LoginPage.mp4' %}"
+src="{% static 'public/videos/LoginVideo.mp4' %}"
 type="video/mp4" id="homeBackground">
 </video>
 
-<h1>Log In</h1>
-  <!-- Vince and Jacob will build the stuff for this -->
-  <!-- feel free to design stuff whenever --> 
-<form method="POST" action="{% url 'login' %}">
+<h1 class="loginTitle">Welcome back, <br> Please log In...</h1>
+ 
+<form method="POST" action="{% url 'login' %}" class="signupTitle">
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="hidden" name="next" value="{{ next }}">
-  <button type="submit" class="btn btn-primary btn-lg">Log In</button>
+  <input type="hidden" name="next" value="{{ next }}" >
+  <button type="submit" class="btn btn-primary btn-lg loginBtn">Log In</button>
 </form>
 
 {% endblock %}
