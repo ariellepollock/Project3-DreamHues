@@ -4,28 +4,26 @@
 
 <style>
   {% if palette %}
-  .image-banner {
+    .image-banner {
       filter: brightness(0.8);
-  }
+    }
 
-  .container {
+    .container {
       background-color: {{ palette.0 }};
-  }
+    }
 
-  h1, h2, h3, .about {
-      color: {{ palette.1 }};
-  }
+    h1, h2, h3, .about {
+        color: {{ palette.1 }};
+    }
 
-  .btn-img {
-      background-color: {{ palette.2 }};
-      color: {{ palette.3 }};
-  }
+    .btn-img {
+        background-color: {{ palette.2 }};
+    }
 
-  .btn-outline-warning {
-      border-color: {{ palette.4 }}
-      color: {{ palette.4 }}
-  }
-{% endif %}
+    .btn-outline-warning {
+        border-color: {{ palette.4 }};
+    }
+  {% endif %}
 </style>
 
 
