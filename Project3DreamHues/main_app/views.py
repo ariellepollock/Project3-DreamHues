@@ -1,4 +1,5 @@
 import os
+IMGIX_KEY = os.environ.get('IMGIX_KEY')
 from typing import Any
 import uuid
 import boto3
@@ -13,11 +14,13 @@ from django.views.generic.detail import DetailView
 
 from . models import Dream, DreamForm, Photo
 
+from main_app.utils import get_imgix_palette 
+
 import requests
 import json
 
 
-# Create your views here.
+#!-- VIEWS BELOW --!#
 
 # Get - Home
 def home(request):
@@ -75,8 +78,9 @@ def get_imgix_palette(image_url):
     }
     headers = {
       'Content-Type': 'application/json',
+      'Authorization': f'Bearer {IMGIX_KEY}', 
     }
-    response = requests.post(imgix_url, json=payload)
+    response = requests.post(imgix_url, json=payload, headers=headers)
 
     if response.status_code == 200:
         return response.json()['data']['palette']
@@ -85,23 +89,32 @@ def get_imgix_palette(image_url):
 
 # add_photo
 def add_photo(request, dream_id):
-  photo_file = request.FILES.get('photo-file', None)
-  if photo_file:
-    s3 = boto3.client('s3')
-    key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+    photo_file = request.FILES.get('photo-file', None)
+    if photo_file:
+        s3 = boto3.client('s3')
+        key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
 
-    try:
-      bucket = os.environ['S3_BUCKET']
-      s3.upload_fileobj(photo_file, bucket, key)
-      url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
-      #Imgix API Palette Generation
-      palette = get_imgix_palette(url)
-      return render(request, 'dreams/add_photo.html', {'dream_id': dream_id, 'url': url, 'palette': palette})
-    except Exception as e:
-      print('woah nelly! an error occurred uploading your file')
-      print(e)
+        try:
+          bucket = os.environ['S3_BUCKET']
+          s3.upload_fileobj(photo_file, bucket, key)
+          url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
+          print(f"URL: {url}")
 
-  return redirect('detail', dream_id=dream_id)
+
+          # Imgix API Palette Generation
+          palette = get_imgix_palette(url)
+          print(f"Imgix API Response: {palette}")
+
+          if palette:
+                return render(request, 'dreams/add_photo.html', {'dream_id': dream_id, 'url': url, 'palette': palette})
+          else:
+                print('Imgix API error: Palette is None')
+
+        except Exception as e:
+            print('woah nelly! an error occurred uploading your file')
+            print(e)  # Print the exception message for debugging
+
+    return redirect('detail', dream_id=dream_id)
 
 # USER STUFF
 # sign up page
