@@ -12,7 +12,8 @@ The app where dreams are logged. Ever want an app where you could keep a journal
 
 ## Entity Relationship Diagram
 Link to ERD: https://www.figma.com/file/VSleVGmKpX5jIyQ9iB4XKa/ERD-for-DreamHues?type=whiteboard&t=pS6oPPImxvtNSEjC-1
-![image](https://github.com/Jlarranaga/Project3-DreamHues/assets/149622991/337bd4a6-c7cb-45da-a008-17ffbb7b94c0)
+![image](https://github.com/Jlarranaga/Project3-DreamHues/assets/149622991/213cea77-5678-45cf-b4ef-d5743fed71c6)
+
 
 
 ## User Stories
