@@ -79,6 +79,11 @@ main {
     color: rgb(255, 255, 255);
     text-align: left;
     font-size: 2vw;
+    padding-left: 2vw;
+}
+
+.start{
+    padding-left: 2vw;
 }
 
 .bedcloud {
