@@ -315,6 +315,10 @@ hr {
     margin: 40px 10px 0 10px;
 }
 
+.delete-space-top {
+    margin-top: 30vmin;
+}
+
 /***************************************** Dream Form Page ****************************************/
 /* form styling */
 .dream-form {
