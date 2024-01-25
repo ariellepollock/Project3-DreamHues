@@ -176,20 +176,6 @@ color: rgb(255, 255, 255);
     color: rgb(255, 255, 255);
 }
 
-.on-date-of {
-    color:white;
-    font-size: 1.5rem;
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.this-was {
-    color:#dbe1ff;
-    text-align: center;
-    font-size: 1.75rem;
-    margin-top: -1.5rem;
-}
-
 .btn-us {
     border-radius: 10px;
     background-color: #dbe1ff;
@@ -294,6 +280,39 @@ hr {
     line-height: normal;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.on-date-of {
+    color:white;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-top: 3rem;
+}
+
+.this-was {
+    color:#dbe1ff;
+    text-align: center;
+    font-size: 1.75rem;
+    margin-top: -1.5rem;
+}
+
+.detail-center {
+    text-align: center;
+}
+
+.detail-about {
+    text-align: left;
+    max-width: 30vmin;
+    color:white;
+    font-size: 1.5rem;
+}
+
+.date-of-color {
+    color:rgb(83, 157, 254)
+}
+
+.btn-space {
+    margin: 40px 10px 0 10px;
 }
 
 /***************************************** Dream Form Page ****************************************/
