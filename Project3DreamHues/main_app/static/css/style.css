@@ -170,13 +170,25 @@ text-shadow: 0 0 5px #1b03f5, 0 0 5px #000000;
 color: rgb(255, 255, 255);
 }
 
-
-
-.pageTitle{
+.pageTitle {
     text-align: center;
     font-family: 'Varela Round';
     text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
     color: rgb(255, 255, 255);
+}
+
+.on-date-of {
+    color:white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.this-was {
+    color:#dbe1ff;
+    text-align: center;
+    font-size: 1.75rem;
+    margin-top: -1.5rem;
 }
 
 .btn-us {

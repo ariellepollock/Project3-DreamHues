@@ -10,16 +10,16 @@ from django.views.generic.list import ListView
 # Create your models here.
 FEELING = (
   # for a dropdown menu in regards to feeling of dream
-  ('G', 'Good'),
-  ('O', 'Okay'),
-  ('N', 'Not Good'),
-  ('B', 'Bad'),
+  ('G', 'great'),
+  ('O', 'okay'),
+  ('N', 'not good'),
+  ('B', 'terrible'),
 )
 
 TYPE = (
-  ('N', 'Nightmare'),
-  ('A', 'Amazing'),
-  ('W', 'Weird')
+  ('N', 'nightmare'),
+  ('A', 'dream'),
+  ('W', 'weird dream')
 )
 
 # class Palette(models.Model):
