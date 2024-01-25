@@ -14,7 +14,7 @@ from django.views.generic.detail import DetailView
 
 from . models import Dream, DreamForm, Photo
 
-from main_app.utils import get_imgix_palette 
+from . utils import get_imgix_palette 
 
 import requests
 import json

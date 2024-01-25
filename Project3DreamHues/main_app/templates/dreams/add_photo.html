@@ -1,18 +1,12 @@
-{% extends 'base_generic.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
-<div style="background-color: {{ palette.0 }}"></div>
-<div style="background-color: {{ palette.1 }}"></div>
-<div style="background-color: {{ palette.2 }}"></div>
-<div style="background-color: {{ palette.3 }}"></div>
-<div style="background-color: {{ palette.4 }}"></div>
+<div style="background-color: {{ palette.0 }};"></div>
+<div style="background-color: {{ palette.1 }};"></div>
+<div style="background-color: {{ palette.2 }};"></div>
+<div style="background-color: {{ palette.3 }};"></div>
+<div style="background-color: {{ palette.4 }};"></div>
 
-<form action="{% url 'add_photo' dream_id %}" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <input type="file" name="photo-file">
-    <button type="submit">Upload Photo</button>
-</form>
-
-<a href="{% url 'detail' dream_id %}">Back to Dream Detail</a>
+<a href="{% url 'detail' dream_id %}">Back to Dream Details</a>
 {% endblock %}
