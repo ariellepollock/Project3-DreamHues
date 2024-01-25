@@ -3,6 +3,13 @@
 ## Overview
 The app where dreams are logged. Ever want an app where you could keep a journal of your dreams and associate imagery and colors to it? Well it has arrived. Start logging your dreams, upload images and generate a color palette. Dreaming just got a whole lot more colorful.
 
+![image](https://github.com/Jlarranaga/Project3-DreamHues/assets/149622991/40f55972-775e-45c9-a05f-1c448bdc2ad0)
+![image](https://github.com/Jlarranaga/Project3-DreamHues/assets/149622991/5884461b-b15f-4f87-85aa-0f10e236b3f0)
+![image](https://github.com/Jlarranaga/Project3-DreamHues/assets/149622991/f736f3d2-b804-4fc5-84bd-6c38da27f7f9)
+
+
+
+
 ## Entity Relationship Diagram
 Link to ERD: https://www.figma.com/file/VSleVGmKpX5jIyQ9iB4XKa/ERD-for-DreamHues?type=whiteboard&t=pS6oPPImxvtNSEjC-1
 ![image](https://github.com/Jlarranaga/Project3-DreamHues/assets/149622991/337bd4a6-c7cb-45da-a008-17ffbb7b94c0)
