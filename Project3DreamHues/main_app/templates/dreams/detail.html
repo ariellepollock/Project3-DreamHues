@@ -55,21 +55,36 @@ type="video/mp4" id="homeBackground">
 </div>
 
 <!-- Dream Details -->
-<div class="container">
-  <h1>{{ dream.name }}</h1>
-  <h2 class="text">The night of {{ dream.date }}</h2>
-  <h3>This was a {{ dream.feeling }} {{ dream.dream_type }} kind of night.</h3>
-  <div class="about lead">
-    <p>{{ dream.about }}</p>
-  </div>
+<div class="container detail-center">
+  <h1 class="pageTitle">{{ dream.name }}</h1>
+  <h3 class="this-was">(this was a {{ dream.get_feeling_display }} {{ dream.get_dream_type_display }} kind of night)</h3>
+  <p class="text on-date-of"><strong class="date-of-color">On the night of {{ dream.date }}, </strong> {{ dream.about }}</p>
 </div>
 
-<div class="container">
-  <a href="{% url 'index' %}" class="btn btn-outline-warning">Back to Dreams</a>
-  <a href="{% url 'dreams_update' dream.id %}" class="btn btn-outline-warning">Update Dream</a>
-  <a href="{% url 'dreams_delete' dream.id %}" class="btn btn-outline-danger">Delete Dream</a>
-
+<div class="container detail-center">
+  <a href="{% url 'index' %}" class="btn waves-effect waves-light btn-small btn-us btn-space">Back to Dreams</a>
+  <a href="{% url 'dreams_update' dream.id %}" class="btn waves-effect waves-light btn-small btn-us btn-space">Update Dream</a>
+  <a href="{% url 'dreams_delete' dream.id %}" class="btn waves-effect waves-light btn-small btn-us btn-space">Delete Dream</a>
 </div>
+
+<!-- <h6>Date: {{ d.date }}</h6>
+{% if d.feeling == 'G' %}
+  <h6>A good feeling dream</h6>
+{% elif d.feeling == 'O' %}  
+  <h6>An okay dream</h6>
+{% elif d.feeling == 'N' %}  
+  <h6>Not a good dream</h6>
+{% elif d.feeling == 'B' %}  
+  <h6>A bad dream</h6>
+{% endif %}
+
+{% if d.dream_type == 'N' %}
+  <h6>Nightmare!</h6>
+{% elif d.dream_type == 'A' %}  
+  <h6>An amazing dream</h6>
+{% elif d.dream_type == 'W' %}  
+  <h6>A weird dream</h6>
+{% endif %} -->
 
 
 {% endblock %}

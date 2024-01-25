@@ -10,14 +10,13 @@
 
 
 <div class="jumbotron">
-  <h1 class="display-4 title">Hello, Dreamer,</h1>
-  <p class="lead smallTitle">Welcome to Dreamhues!</p>
+  <p class="lead smallTitle">Hello, Dreamer,<br>Welcome to Dreamhues!</p>
   <img src="{% static 'public/imgs/bedcloudnob.png' %}" class="bedcloud" alt="bed on a cloud">
   {% if not user.is_authenticated %}
   <p class="bottomTitle start">Let's get Started, sign in or sign up...</p>
   <p class="lead start">
-    <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Login</a>
-    <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">New User</a>
+    <a class="btn waves-effect waves-light btn-small btn-us" href="{% url 'login' %}" role="button">Login</a>
+    <a class="btn waves-effect waves-light btn-small btn-us" href="{% url 'signup' %}" role="button">New User</a>
   </p>
   {% endif %}
 </div>
