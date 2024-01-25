@@ -6,54 +6,37 @@ src="{% static 'public/videos/DetailPage.mp4' %}"
 type="video/mp4" id="homeBackground">
 </video>
 
-<h1 class="pageTitle">Dreams Library</h1>
-
+<h1 class="pageTitle">DREAM LIBRARY</h1>
 
 {% for d in dreams %}
 {% if dreams %}
-  <div class="row indexCard ">  
-    <div class="col s12 m7 amitaFont">
+  <div class="row">
+    <div class="col s12 m6">
       <div class="card">
         <div class="card-image">
-          <div class="image-banner" style="background-image: url('{{ dream.photo_set.last.url }}');"></div>
-          <span class="card-title amitaFont">{{ d.name }}</span>
-        </div>
-          <div class="card-content">
-          <!-- <h5 class="amitaFont"></h5> -->
-      
-          <h6>Date: {{ d.date }}</h6>
-          {% if d.feeling == 'G' %}
-            <h6>A good feeling dream</h6>
-          {% elif d.feeling == 'O' %}  
-            <h6>An okay dream</h6>
-          {% elif d.feeling == 'N' %}  
-            <h6>Not a good dream</h6>
-          {% elif d.feeling == 'B' %}  
-            <h6>A bad dream</h6>
-          {% endif %}
+          <img src="{{ d.image }}">
 
+          <a href="{% url 'detail' d.id %}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">+</i></a>
+        </div>
+        <div class="card-content">
+          <span class="card-title">{{ d.name }}</span>
+          <h6>{{ d.date }}</h6>
           {% if d.dream_type == 'N' %}
-            <h6>Nightmare!</h6>
+            <h6>What a NIGHTMARE</h6>
           {% elif d.dream_type == 'A' %}  
-            <h6>An amazing dream</h6>
+            <h6>It was AMAZING</h6>
           {% elif d.dream_type == 'W' %}  
-            <h6>A weird dream</h6>
+            <h6>That was WEIRD</h6>
           {% endif %}
 
           {% else %}  
-            <p class="indexCreate">There are no dreams yet... let's get dreaming...</p>
-            <a href="{% url 'dreams_create' %}" class="indexCreate">Create a dream</a>
+            <p class="indexCreate">You haven't logged any dreams yet, might we suggest a nap?</p>
+            <a href="{% url 'dreams_create' %}" class="indexCreate">ADD A DREAM</a>
           {% endif %}
-
         </div>
-        <div class="card-action">
-          <a href="{% url 'detail' d.id %}">Dream Details</a>
-        </div>
-      
       </div>
     </div>
   </div>
-  
 {% endfor %}
 
 

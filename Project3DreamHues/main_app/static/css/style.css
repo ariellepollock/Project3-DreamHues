@@ -7,15 +7,16 @@
     font-family: 'Sevillana';
     src: url('/static/public/fonts/sevillana/Sevillana-Regular.ttf')
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 @font-face{
     font-family: 'Varela Round';
     src: url('/static/public/fonts/varela_round/VarelaRound-Regular.ttf')
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 *, *::before, *::after {
@@ -50,13 +51,14 @@ main {
 }
 
 /***************************************** Home Page ****************************************/
-.navTitle{
+
+.navTitle {
     font-family: 'Varela Round';
     text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
     color: rgb(255, 255, 255);
 }
 
-.title{
+.title {
     font-family: 'Sevillana';
     text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
     color: rgb(255, 255, 255);
@@ -65,7 +67,8 @@ main {
 
 }
 
-.smallTitle{
+.smallTitle {
+    margin-top: 10vh;
     font-family: 'Sevillana';
     text-shadow: 0 0 5px #1b03f5, 0 0 5px #fcfbfb;
     color: rgb(255, 255, 255);
@@ -73,7 +76,7 @@ main {
     font-size: 5vw;
 }
 
-.bottomTitle{
+.bottomTitle {
     font-family: 'Sevillana';
     text-shadow: 0 0 5px #1b03f5, 0 0 5px #fcfbfb;
     color: rgb(255, 255, 255);
@@ -86,8 +89,8 @@ main {
     margin-right: auto;
     margin-left: auto;
     border: none;
-    max-width: 50vmin;
-    margin-top: -3vw;
+    max-width: 80vmin;
+    margin-top: -20vh;
 }
 
 #homeBackground {
@@ -102,8 +105,9 @@ main {
     z-index: -1; 
 }
 
+
 /***************************************** Login Page ****************************************/
-.loginTitle{
+.loginTitle {
     font-family: 'Varela Round';
     text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
     color: rgb(255, 255, 255);
@@ -116,38 +120,38 @@ main {
     color: rgb(255, 255, 255);
 }
 
-.loginForm{
+.loginForm {
     padding: 5vw;
 }
 
 /***************************************** Signup Page ****************************************/
-.signupTitle{
+.signupTitle {
     font-family: 'Varela Round';
     text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
     color: rgb(255, 255, 255);
 }
 
-.signup{
+.signup {
     padding-left: 5vw;
 }
 
-.signupForm{
+.signupForm {
     padding: 5vw;
 }
 
-.helptext{
+.helptext {
     font-family: 'Varela Round';
     text-shadow: 0 0 5px #ff0000, 0 0 5px #ffffff;
     color: rgb(255, 255, 255);
 }
 
-li{
+li {
     font-family: 'Varela Round';
     text-shadow: 0 0 5px #f50303, 0 0 5px #ffffff;
     color: rgb(255, 255, 255);
 }
 
-p{
+p {
     font-family: 'Varela Round';
     text-shadow: 0 0 5px #020202, 0 0 5px #000000;
     color: rgb(253, 253, 253);
@@ -161,14 +165,7 @@ text-shadow: 0 0 5px #1b03f5, 0 0 5px #000000;
 color: rgb(255, 255, 255);
 }
 
-.indexCard{
-    margin: 4vmin;
-    text-align: center;
-    /* width: 30vw; */
-    align-self: center;
-    /* background: none; */
-    border: none;
-}
+
 
 .pageTitle{
     text-align: center;
