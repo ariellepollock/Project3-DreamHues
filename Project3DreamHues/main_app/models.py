@@ -47,7 +47,6 @@ class Dream(models.Model):
     choices=TYPE,
     default=TYPE[0][1]
   )
-  # dream_palette = models.ForeignKey(Palette, on_delete=models.CASCADE)  # Add the Palette field
 
   # Adds an owner field to link the dream to a user
   owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='dreams', default=None) 
@@ -82,7 +81,14 @@ class Photo(models.Model):
 
   def __str__(self):
     return f"dream_id: {self.dream_id} @{self.url}"
-  
+
+class Palette(models.Model):
+    color1 = models.CharField(max_length=7)
+    color2 = models.CharField(max_length=7)
+    color3 = models.CharField(max_length=7)
+    color4 = models.CharField(max_length=7)
+    color5 = models.CharField(max_length=7)
+
 class DreamListView(LoginRequiredMixin, ListView):
   model = Dream
   template_name = 'dreams/index.html'
