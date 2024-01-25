@@ -344,6 +344,7 @@ hr {
     font-size: 100%;
     line-height: normal;
     cursor: pointer;
+    text-shadow: none;
     transition: background-color 0.3s ease;
 }
 
