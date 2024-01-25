@@ -107,8 +107,8 @@ def add_photo(request, dream_id):
           bucket = os.environ['S3_BUCKET']
           s3.upload_fileobj(photo_file, bucket, key)
           url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
-          print(f"URL: {url}")
-
+          Photo.objects.create(url=url, dream_id=dream_id)
+          # print(f"URL: {url}")
 
           # Imgix API Palette Generation
           palette = get_imgix_palette(url)
