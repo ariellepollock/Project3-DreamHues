@@ -12,14 +12,38 @@ type="video/mp4" id="homeBackground">
 {% else %}
     <h3>Add a Dream</h3>
 {% endif %}
+<div class="input-field container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            <div class="input-field card-panel ">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+            </div>
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-    <input type="submit" value="LOG DREAM" class="waves-effect waves-light btn-small btn-us">
-</form>
+            <div class="input-field card-panel">
+                {{ form.date.label_tag }}
+                {{ form.date }}
+            </div>
+
+            <div class="input-field card-panel">
+                {{ form.about.label_tag }}
+                {{ form.about }}
+            </div>
+
+            <div class="input-field card-panel">
+                {{ form.feeling.label_tag }}
+                {{ form.feeling }}
+            </div>
+
+            <div class="input-field card-panel">
+                {{ form.dream_type.label_tag }}
+                {{ form.dream_type }}
+            </div>
+        </table>
+        <button type="submit" class="btn waves-effect waves-light btn-small btn-us">LOG DREAM</button>
+    </form>
+</div>
 
 <script>
 const dateEl = document.getElementById('id_date')

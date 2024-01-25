@@ -82,6 +82,11 @@ main {
     color: rgb(255, 255, 255);
     text-align: left;
     font-size: 2vw;
+    padding-left: 2vw;
+}
+
+.start{
+    padding-left: 2vw;
 }
 
 .bedcloud {
@@ -222,5 +227,10 @@ color: rgb(255, 255, 255);
     color: white;
 }
 
-
+.form-field {
+    background-color: #ffffff;
+    color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
 
