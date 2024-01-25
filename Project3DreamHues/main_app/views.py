@@ -62,8 +62,17 @@ class DreamCreate(CreateView):
 # - UpdateView
 class DreamUpdate(UpdateView):
   model = Dream
-  fields = '__all__'
+  form_class = DreamForm
 
+  def form_valid(self, form):
+    form.instance.owner = self.request.user
+    return super().form_valid(form)
+  
+  def get_form_kwargs(self):
+    kwargs = super().get_form_kwargs()
+    kwargs['user'] = self.request.user
+    return kwargs
+  
 # -DeleteView
 class DreamDelete(DeleteView):
   model = Dream
