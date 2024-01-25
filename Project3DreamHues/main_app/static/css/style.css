@@ -86,6 +86,11 @@ main {
 
 .start{
     padding-left: 2vw;
+    margin-bottom: 1vw;
+}
+
+.startBtn{
+    margin-bottom: 4vw;
 }
 
 .bedcloud {
@@ -107,6 +112,10 @@ main {
     bottom: 0;
     right: 0;
     z-index: -1; 
+}
+
+.jumbotron{
+    margin-top: -4vw;
 }
 
 
@@ -160,6 +169,46 @@ p {
     text-shadow: 0 0 5px #020202, 0 0 5px #000000;
     color: rgb(253, 253, 253);
 }
+/***************************************** About Page ****************************************/
+.aboutPage{
+    padding-left: 2vw;
+}
+
+/***************************************** Dream Detail Page ****************************************/
+.imageMsg{
+    font-family: 'Varela Round';
+    text-shadow: 0 0 5px #f50303, 0 0 5px #ff0404;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 3vw;
+    padding-top: 7vw;
+}
+
+/***************************************** Add A Dream Page ****************************************/
+.addCard{
+    
+    background: none;
+}
+
+label{
+    font-family: 'Varela Round';
+    text-shadow: 0 0 5px #f70404, 0 0 5px #ffffff;
+    color: rgb(255, 255, 255);
+    font-size: 4vmin;
+    
+}
+
+.select-dropdown{
+    /* text-shadow: 0 0 5px #0026fd, 0 0 5px #1100fc; */
+    color: rgb(253, 253, 253);
+    font-family: 'Varela Round';
+}
+
+#id_date, #id_name, #id_about, #id_feeling, #id_dream_type{
+    color: white;
+    
+}
+
 
 /***************************************** Dream Index Page ****************************************/
 .amitaFont {
@@ -174,6 +223,22 @@ color: rgb(255, 255, 255);
     font-family: 'Varela Round';
     text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
     color: rgb(255, 255, 255);
+}
+
+.indexCreate{
+    text-shadow: 0 0 5px #1b03f5, 0 0 5px #ffffff;
+    color: rgb(255, 255, 255);
+    font-family: 'Varela Round';
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.indexAdd{
+    text-shadow: 0 0 8px #fd0202, 0 0 8px #fa0000;
+    color: rgb(255, 255, 255);
+    font-family: 'Varela Round';
+    font-size: 2vw;
+    text-align: center;
 }
 
 .btn-us {
