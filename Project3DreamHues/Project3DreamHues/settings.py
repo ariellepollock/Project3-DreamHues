@@ -12,11 +12,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 # import environ
 from pathlib import Path
+import dj_database_url
 import environ
 import os
 
-env = environ.Env()
-environ.Env.read_env()
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
 
 GOOGLE_CLIENT_ID = env.str("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = env.str("GOOGLE_CLIENT_SECRET")
@@ -24,9 +27,20 @@ GOOGLE_CALLBACK = env.str("GOOGLE_CALLBACK")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # STATIC_URL = '/Project3DreamHues/main_app/static/public/videos/'
 STATIC_URL = '/static/'
+
+if not DEBUG:
+    # Tell Django to copy statics to the `staticfiles` directory
+    # in your application directory on Render.
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    # Turn on WhiteNoise storage backend that takes care of compressing static files
+    # and creating unique names for each version so they can safely be cached forever.
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'videos')
 
 
@@ -34,12 +48,16 @@ STATIC_URL = '/static/'
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$4x+7+$e9x9c#iv7+dwqbjyxmlf54pz$39^anr!3)+b3n7lb0&'
+# SECRET_KEY = 'django-insecure-$4x+7+$e9x9c#iv7+dwqbjyxmlf54pz$39^anr!3)+b3n7lb0&'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = []
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
@@ -57,6 +75,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
